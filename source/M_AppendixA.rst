@@ -2,8 +2,9 @@
 
 A. Description of the Example Architectures
 ####################################################
-In support of Section 3 of SP 1800-37 (:ref:`Section3`) , this appendix contains the detailed description of the three example architectures for achieving visibility of TLS 1.3 encrypted network traffic.
+As indicated in :ref:`Architecture_and_Builds`, this appendix contains the detailed description of the three example architectures for achieving visibility of TLS 1.3 encrypted network traffic.
 
+:ref:`Architecture_and_Builds`
 
 .. _A.1:
 
