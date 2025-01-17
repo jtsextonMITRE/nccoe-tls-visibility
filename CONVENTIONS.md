@@ -5,8 +5,10 @@
 2. Create a branch based off the branch you are planning to merge into.
 3. Commit and push your changes to your branch.
 4. Create a pull request to merge your branch into the branch you branched off of.
-5. Ensure that your pull request is only touching files you intended to change. 
-6. Assign someone to review your pull request.
+5. Typically, it is best to write something along the lines of "Closes #XX" or "Addresses #XX", but replace XX with the issue number you were creating the branch to address.
+6. Ensure that your pull request is only touching files you intended to change. 
+7. Assign someone to review your pull request.
+8. If you are not merging into main, it is a good idea to also link your issue under the Development section on your pull request. , 
 
 # Reviewing others' Pull Requests
 
@@ -18,9 +20,9 @@
 6. Choose either Approve or Request Changes, depending on whether changes are necessary.
 7. Click Submit Review when finished.
 
-# Revising pull requests.
+# Revising Pull Requests.
 
 1. When revising your pull request based on another person's changes, you can click use the comments as a check list, and click "Resolve Conversation" when you have added a commit that resolves that particular comment.
 2. Typically, it is good to notify the reviewer that your Pull Request has been revised and is ready for a second review.
 
-After this last review, barring any reviews by other reviewers, it may be safe to merge into the original branch. 
+After this last review, barring any needed reviews by other reviewers, it should be safe to merge into the original branch. 
