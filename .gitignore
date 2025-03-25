@@ -1,0 +1,9 @@
+*.code-workspace
+html/*
+.DS_Store
+_site/*
+__pycache__/*
+*.pyc
+
+*.doctree
+source/_site/*
