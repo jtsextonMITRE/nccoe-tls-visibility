@@ -8,10 +8,19 @@ Within the lab, only one middlebox implementation can be functional at any one t
 the Layer 3 middlebox was powered down. Similarly, to demonstrate the Layer 3 configuration, the F5 Middlebox (``T``) was
 powered up and the Layer 2 middlebox was powered down.
 
-In order to route traffic appropriately in either configuration, the middleboxes were wired in tandem between the Data Center Border Router (``RA``) and the Data Center Segment Router (``RB``).  :ref:`Figure E-1`, below,
+.. _Figure_Detailed_Arch:
+
+.. figure:: /images/figures/Figure-1-4-v2.png
+   :width: 90%
+   :alt: Image showing the detailed architecture.
+
+   Architecture and Networking details.
+
+
+In order to route traffic appropriately in either configuration, the middleboxes were wired in tandem between the Data Center Border Router (``RA``) and the Data Center Segment Router (``RB``).  :ref:`Figure_E-1`, below,
 shows the wiring configurations between the two routers and two middleboxes. 
 
-.. _Figure E-1:
+.. _Figure_E-1:
 
 .. figure:: /images/figures/Figure-1-5-v1.png
    :width: 90%

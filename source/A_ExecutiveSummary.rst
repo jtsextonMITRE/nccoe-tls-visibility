@@ -6,7 +6,7 @@ Executive Summary
 Enterprises need visibility into the data transiting their
 networks—particularly their enterprise data centers to implement
 critical cybersecurity, operational, and regulatory controls (e.g.,
-intrusion detection and response, malware detection, troubleshooting,
+intrusion detection and response, malware detection, troubleshooting, and
 fraud monitoring). Implementing network security protocols in enterprise
 data centers to ensure data integrity and confidentiality has posed
 challenges for maintaining the necessary network visibility required by
@@ -16,7 +16,7 @@ comprehensive inspection, collection, and analysis of internal network
 traffic. In the past, decryption of network traffic by passive
 decryption devices involved providing copies of servers' long-term
 cryptographic keys purely for monitoring and inspection purposes. In
-these cases, long-term cryptographic keys allow decryption of past,
+these cases, long-term cryptographic keys allow the decryption of past,
 present, and future network traffic for the lifetime of a key.
 
 Modern protocol designers have changed protocols to strengthen security
@@ -42,7 +42,7 @@ Enterprises using the TLS 1.2 protocol without forward secrecy (which
 was how TLS 1.2 was originally specified), deploy tools and
 architectural solutions that provide visibility into enterprise traffic
 within their network. Enterprise visibility into received network
-traffic should remain intact to enforce the organization's' security
+traffic should remain intact to enforce the organization's security
 monitoring, analysis, and management policies. Monitoring and analysis
 tools that conform to their security policies are dependent on
 visibility solutions that enable an enterprise-authorized party to
@@ -51,9 +51,14 @@ demonstrate approaches for enterprises to adopt TLS 1.3, reap the
 benefits from the improved security functionality, while maintaining the
 visibility that they have come to expect.
 
-This publication describes the motivation, approach, architecture, build
-implementation, demonstration scenarios, results, and risk and
-compliance management characteristics for the demonstrated proofs of
-concept. It includes links (on GitHub) to detailed technical information
-foreach build that technology implementers can emulate in their own
-environments.
+This publication describes the motivation, approach, architecture, build implementation,
+demonstration scenarios, results, and risk and compliance management characteristics for
+the demonstrated proofs of concept. The top-level overview provides links to technical
+details that are contained in GitHub files. The linked files provide detailed technical
+information for each build that technology implementers can emulate in their own environments.
+This implementation demonstration is not intended as a recommended default or even for common
+use but to assist in those areas where, as OMB M 22-09 states: "...as agencies segment their
+networks, move away from intranets, and permit access to enterprise services from any network,
+inspecting traffic in these environments will become less practical and less valuable over time.
+In other places, deep traffic inspection may be more valuable and can create less of an increase
+in attack surface."

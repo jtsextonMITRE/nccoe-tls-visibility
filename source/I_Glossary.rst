@@ -4,8 +4,8 @@ A. Glossary
 ^^^^^^^^^^^^^^^^^^^^
 
 We use the terms from NISTIR 7298, *Glossary of Information Security
-Terms* :ref:`[18]<nist_glossary>`__ or IETF RFC 4949, *Internet Security
-Glossary*, Version 2 :ref:`[19]<ietf_terms>`__ where those references
+Terms* :ref:`[18]<nist_glossary>` or IETF RFC 4949, *Internet Security
+Glossary*, Version 2 :ref:`[19]<ietf_terms>` where those references
 define the terms.
 
 +------------------+------------------------------------------------------+
@@ -108,7 +108,7 @@ define the terms.
 |                  | used initially to set up and periodically change the |
 |                  | operations performed in cryptographic operations for |
 |                  | the purpose of encrypting or decrypting electronic   |
-|                  | signals, or for producing another key.               |
+|                  | signals or for producing another key.               |
 +------------------+------------------------------------------------------+
 | **Key            | Captures of session keys at the time they are        |
 | Capture**        | negotiated.                                          |
@@ -128,7 +128,7 @@ define the terms.
 |                  | cryptography.                                        |
 +------------------+------------------------------------------------------+
 | **Kubernetes**   | A portable, extensible, open-source platform for     |
-|                  | managing containerized workloads and services, that  |
+|                  | managing containerized workloads and services that  |
 |                  | facilitates both declarative configuration and       |
 |                  | automation.                                          |
 +------------------+------------------------------------------------------+
@@ -180,7 +180,7 @@ define the terms.
 | Key**            | cryptographic algorithm that is uniquely associated  |
 |                  | with one or more entities and is not made public.    |
 |                  | The use of the term "secret" in this context does    |
-|                  | not imply a classification level, but rather implies |
+|                  | not imply a classification level but rather implies |
 |                  | the need to protect the key from disclosure.         |
 +------------------+------------------------------------------------------+
 | **Server**       | A system entity that provides services in response   |

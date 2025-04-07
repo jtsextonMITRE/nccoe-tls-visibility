@@ -16,7 +16,7 @@ Addressing Visibility Challenges with TLS 1.3 within the Enterprise
    B_Introduction.rst
    C_ProjectOverview.rst
    D_Architecture.rst
-   E_Builds.rst
+   E_Build_Implementation.rst
    F_Demonstrations.rst
    G_RiskCompliance.rst
    H_GeneralFindings.rst
@@ -46,6 +46,7 @@ Addressing Visibility Challenges with TLS 1.3 within the Enterprise
 | **Julian Sexton** |br|     | |br|                       |                            |
 | **Michael Dimond** |br|    | |br|                       |                            |
 | **Ryan Williams** |br|     | |br|                       |                            |
+| **Josh Klosterman**  |br|  | |br|                       |                            |
 | The MITRE Corporation |br| | Vigil Security, LLC |br|   |                            |
 | McLean, VA                 | Herndon, VA                |                            |
 +----------------------------+----------------------------+----------------------------+
@@ -56,9 +57,9 @@ February 2025
 
 PRELIMINARY DRAFT
 
-..figure: 
-
-|This graphic contains the logos for NIST and the NCCoE.|
+.. figure:: /images/figures/nistnccoelogos3.png
+   :alt: This graphic contains the logos for NIST and the NCCoE.
+   :width: 90%
 
 **DISCLAIMER**
 
@@ -185,7 +186,7 @@ The assurance shall also indicate that it is intended to be binding on successor
 
 Such statements should be addressed to: applied-crypto-visibility@nist.gov
 
-.. |This graphic contains the logos for NIST and the NCCoE.| image:: images/Figure1.png
+.. |This graphic contains the logos for NIST and the NCCoE.| image:: images/NIST.png
    :alt: This graphic contains the logos for NIST and the NCCoE.
 
 .. # define a hard line break for HTML

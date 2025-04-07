@@ -19,7 +19,7 @@ demonstrate how to implement TLS 1.3 while maintaining essential
 real-time and post-facto visibility into enterprise network traffic.
 Real-time visibility allows for threat detection during data exchange,
 while post-facto visibility enables analysis after the fact, such as
-forensics analysis to understand anomalies and respond or recover from
+forensics analysis, to understand anomalies and respond toor recover from
 security incidents.
 
 AppViewX
@@ -40,10 +40,10 @@ certificate alerts, and fully automated renewals and revocations.
 AppViewX partnered with NETSCOUT to contribute a prototype TLS 1.3 key
 governance platform that it plans to formalize as an open industry
 standard. Key governance platform pairs with a Secure Key Orchestration
-initiative to secure and automate management of all encryption keys
+initiative to secure and automate the management of all encryption keys
 across distributed and hybrid enterprise environments. The AppViewX
 Cloud-native Identity and Security Platform is used in critical
-infrastructures to reduce cybersecurity risk and meets security
+infrastructures to reduce cybersecurity risk and meet security
 compliance requirements. Thanks to streamlined automation workflows, the
 AppViewX Platform supports enterprise-wide central certificates and key
 governance and lifecycle management. The modular AppViewX Platform and
@@ -81,9 +81,9 @@ can inventory all certificates within the enterprise. In addition to
 certificate-specific features, the platform offers baseline enterprise
 SaaS capabilities, including role-based access control (RBAC), Security
 Assertion Markup Language (SAML), single sign-on (SSO), and security
-policy management and enforcement. All account features come with full
-parity between the web portal and a publicly available API. Learn more
-about DigiCert at https://www.digicert.com.
+policy management and enforcement. All account features are fully compatible with
+the web portal and a publicly available API. Learn more about DigiCert
+at https://www.digicert.com.
 
 F5
 ~~~
@@ -368,7 +368,7 @@ architecture.
   secure handling and disposal of data.
 
 - **Key Management Agent**: Provides a secure interface for provisioning
-  TLS server keys, implementing policies for key activation and
+  TLS server keys and implementing policies for key activation and
   expiration.
 
 - **Key Capture and Registration Agent:** Captures the session keys at
@@ -391,7 +391,7 @@ High-Level Passive Inspection Architecture Overview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The figures below depict the functional components of a passive decrypt
-and inspect demonstration architecture. The figure below illustrates depicts
+and inspect demonstration architecture. The figure below depicts
 passive inspection using rotated bounded-lifetime DH keys on the
 destination TLS server. This approach can be used to capture decrypted
 traffic for real-time analysis, incoming traffic for post-facto or

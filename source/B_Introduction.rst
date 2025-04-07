@@ -68,8 +68,8 @@ network and data center operations, including:
   endpoint (or middlebox) platform is incapable of adequate logging
   without causing utilization or performance issues on the platform.
 
-- There are many security threats that are more easily or only
-  identifiable from visibility into network data. Where and how the
+- There are many security threats that are more easily identifiable or only
+  visible from visibility into network data. Where and how the
   network data is identified and collected can reveal key information
   about security threats.
 
@@ -94,7 +94,7 @@ network and data center operations, including:
   what can be done about it. Alternatives to DPI require significant
   time and effort and are generally prohibitively disruptive and
   expensive. Alternatives to DPI monitoring and analysis of decrypted
-  incoming network data streams includes:
+  incoming network data streams include:
 
 - Re-architecting the enterprise network\ **:** This is difficult,
   expensive, and time-consuming, and, even where feasible, is not a
@@ -113,14 +113,14 @@ network and data center operations, including:
 
 - Use of intermediate proxies between application tiers: This approach
   would add cost, latency, and potential points of failure. The more
-  tiers that a given application has makes proxies less viable, and more
-  expensive that enabling visibility of network traffic as described in
-  this publication., The cost and complexity increases could be enormous
+  tiers that a given application has makes proxies less viable and more
+  expensive than enabling visibility of network traffic, as described in
+  this publication. The cost and complexity increases could be enormous
   in many cases. There may also be situations where intermediate proxies
   are not possible such as secure subnets and virtual environments.
 
 A significant constraint in meeting the visibility challenges attendant
-on TLS 1.3 are workable approaches that don't change the current TLS 1.3
+on TLS 1.3 is the lack of workable approaches that don't change the current TLS 1.3
 standard or require the development or adoption of additional or
 alternative standards.
 
