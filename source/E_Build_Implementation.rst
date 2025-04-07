@@ -72,7 +72,7 @@ platform provisions the server with new bounded-lifetime DH key pairs on
 a frequent basis via the agent. A decrypt platform that has the
 bounded-lifetime DH key pairs used by the TLS server to establish TLS
 sessions can decrypt all TLS sessions to the server for the period
-during which the server uses those DH key pairs. Figure 4-1 depicts the
+during which the server uses those DH key pairs. The figure below depicts the
 elements involved in the bounded-lifetime DH demonstration. Both
 post-facto and real-time decryption capabilities are illustrated. The
 descriptive detail for passive inspection using bounded lifetime DH is
@@ -155,12 +155,9 @@ Bounded-Lifetime DH Passive Inspection Laboratory Build Components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The software or services used for each of the architecture components in
-the lab build for this reference architecture are in Table 1-1: Build
-Components for the Passive Decryption Using Bounded Life-time Server
-Keys.
+the lab build for this reference architecture are in the table below.
 
-.. table:: Table 4-1: Build Components for the Passive Decryption Using
-Bounded Life-time Server Keys Reference Architecture
+.. table:: Build Components for the Passive Decryption Using Bounded Life-time Server Keys Reference Architecture
 
    +----------------------+--------------+-------------------------------+
    | **Architecture       | **Co         | **Product Information**       |
@@ -247,7 +244,7 @@ governance platform. These keys can be retrieved from the key governance
 platform using the TLS session's client-random-id as the flow
 identification mechanism. This decrypt mechanism works regardless of the
 TLS version and cipher suite negotiated between the client and server.
-Figure 4-2 depicts the elements involved in demonstrating inspection
+The figure below depicts the elements involved in demonstrating inspection
 using exported session keys. Both post-facto and real-time decryption
 capabilities are illustrated.
 
@@ -427,7 +424,7 @@ Platform using the client's random identifier for the TLS session to be
 decrypted. The descriptive detail for active inspection using
 middleboxes is provided in :ref:`E.4`.
 
-Figure 4-3 depicts the architectural elements involved in demonstrating
+The figure below depicts the architectural elements involved in demonstrating
 visibility using a middlebox. **Note**: Although real-time and
 post-facto decryption is shown in the architecture drawing, only
 real-time decryption has been demonstrated as of this writing. Traffic

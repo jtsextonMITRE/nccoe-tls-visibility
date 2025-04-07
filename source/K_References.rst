@@ -103,3 +103,10 @@ https://doi.org/10.6028/NIST.IR.7298r3
 **[19]** R. Shirey, *Internet Security Glossary*, *Version 2,* Internet
 Engineering Task Force (IETF) Request for Comments (RFC) 4949, August
 2007. Available at https://datatracker.ietf.org/doc/rfc4949/
+
+.. _8477:
+**[20]** K. Scarfone, M. Souppaya, and M. Fagan, *Mapping Relationships
+Between Documentary Standards, Regulations, Frameworks, and Guidelines:
+Developing Cybersecurity and Privacy Concept Mappings* National Institute
+of Standards and Technology Interagency Report (NISTIR) 8477, February 
+2024. https://doi.org/10.6028/NIST.IR.8477

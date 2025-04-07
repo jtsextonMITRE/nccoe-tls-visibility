@@ -299,8 +299,7 @@ Security Control Map
 
 Mappings between cybersecurity functions performed by the reference
 design's logical components and the security characteristics enumerated
-in relevant cybersecurity documents are available at :mark:`[provide
-link]`.
+in relevant cybersecurity documents are available in :ref:`AppendixG`.
 
 Any organization can use these mappings to implement or refine TLS 1.3
 visibility solutions. The mappings explain how cybersecurity functions
@@ -315,8 +314,7 @@ visibility cybersecurity functions, CSF Subcategories, and SP 800-53
 controls—are concepts involving ways to reduce cybersecurity risk. The
 mapping methodology is described in NIST IR 8477 *Mapping Relationships
 Between Documentary Standards, Regulations, Frameworks, and Guidelines:
-Developing Cybersecurity and Privacy Concept Mappings* [add this
-reference].
+Developing Cybersecurity and Privacy Concept Mappings* :ref:`[20]<8477>`.
 
 The two primary use cases for this mapping (below) are not intended to
 be comprehensive.
