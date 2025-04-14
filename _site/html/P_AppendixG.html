@@ -1,0 +1,1459 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>G. Mappings of TLS 1.3 Visibility Capabilities to Risk Framework Documents &#8212; NCCoE TLS Visibility Project</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/content.css?v=59cd0ab0" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=7b4a448d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/jquery.js?v=5d32c60e"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'P_AppendixG';</script>
+    <script src="_static/jquery.visible.js?v=5b129ffc"></script>
+    <script src="_static/jquery.leaveNotice-nist.js?v=7cf1efa2"></script>
+    <script src="_static/applyLeaveNotice.js?v=b28731dc"></script>
+    <script src="_static/smoothNavScroll.js?v=2ce98a12"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js"></script>
+    <script src="_static/main.js?v=98e934ba"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Change Log" href="Z_ChangeLog.html" />
+    <link rel="prev" title="Scenario 4.2: Outdated Software" href="AppCScenarios/ds-13.html" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+
+    <!-- Google tag (gtag.js) -->
+    <script async
+        src="https://www.googletagmanager.com/gtag/js?id=G-RJSMY46M5C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-RJSMY46M5C');
+
+    </script>
+    <!-- Old DAP UA tag -->
+    <script async type="text/javascript" id="_fed_an_ua_tag"
+        src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIST&subagency=github&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c">
+    </script>
+    <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+    <link rel="stylesheet" type="text/css" href="https://pages.nist.gov/leaveNotice/css/jquery.leaveNotice.css" />
+    <script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer-v-2.0.js" type="text/javascript" defer="defer"></script>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">NCCoE TLS Visibility Project</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Addressing Visibility Challenges with TLS 1.3 within the Enterprise
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="A_ExecutiveSummary.html">Executive Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="B_Introduction.html">Introduction to This TLS 1.3 Visibility Practice Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C_ProjectOverview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="D_Architecture.html">Architecture and Builds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E_Build_Implementation.html">Build Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="F_Demonstrations.html">Functional Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="G_RiskCompliance.html">Risk and Compliance Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="H_GeneralFindings.html">General Findings and Future Build Considerations</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="L_Appendices.html">Additional Materials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="I_Glossary.html">A. Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="J_Acronyms.html">B. List of Acronyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="K_References.html">C. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M_AppendixD.html">D. Description of the Example Architectures</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="N_AppendixE.html">E. Descriptions of the Build Implementations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="N0_Shared_Components.html">E.1 Shared Components Across All Builds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="N1_RK_Implementation.html">E.2 Architecture Implementation: Passive Inspection Using Bounded-lifetime DH Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="N2_EK_Implementation.html">E.3 Architecture Implementation: Passive Inspection Using Exported Session Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="N3_MB_Implementation_Overview.html">E.4 Architecture Implementation: Active Inspection Using Middleboxes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="O_AppendixF.html">F. Details of the Functional Demonstrations and Results</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="AppCScenarios/ds-1.html">Scenario 1.1: Expired TLS Certificates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AppCScenarios/ds-2.html">Scenario 1.2: Service Utilization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AppCScenarios/ds-3.html">Scenario 1.3: Error Code Logging (Layers)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AppCScenarios/ds-4.html">Scenario 2.1: Status Code Logging (Protocols)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AppCScenarios/ds-5.html">Scenario 2.2: Proxy Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AppCScenarios/ds-6.html">Scenario 2.3: Bandwidth Utilization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AppCScenarios/ds-7.html">Scenario 3.1a: Malicious HTTPS File Serving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AppCScenarios/ds-8.html">Scenario 3.1b: Malicious SMTP Attachment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AppCScenarios/ds-9.html">Scenario 3.2: Unexpected or Unauthorized Encryption</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AppCScenarios/ds-10.html">Scenario 3.3: Command and Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AppCScenarios/ds-11.html">Scenario 3.4: Unsanitized User Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AppCScenarios/ds-12.html">Scenario 4.1: Outdated Protocols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AppCScenarios/ds-13.html">Scenario 4.2: Outdated Software</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">G. Mappings of TLS 1.3 Visibility Capabilities to Risk Framework Documents</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="Z_ChangeLog.html">Change Log</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/P_AppendixG.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>G. Mappings of TLS 1.3 Visibility Capabilities to Risk Framework Documents</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-1-use-cases">G.1 Use Cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-2-mapping-terminology">G.2 Mapping Terminology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-3-cybersecurity-framework-csf-mapping">G.3 Cybersecurity Framework (CSF) Mapping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-4-special-publication-sp-800-53-mapping">G.4 Special Publication (SP) 800-53 Mapping</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="g-mappings-of-tls-1-3-visibility-capabilities-to-risk-framework-documents">
+<span id="appendixg"></span><h1>G. Mappings of TLS 1.3 Visibility Capabilities to Risk Framework Documents<a class="headerlink" href="#g-mappings-of-tls-1-3-visibility-capabilities-to-risk-framework-documents" title="Link to this heading">#</a></h1>
+<p>Mappings between cybersecurity functions performed by the reference design’s logical components and the security characteristics enumerated in relevant cybersecurity documents are provided in this appendix. These mappings are intended for any organization that is interested in implementing TLS 1.3 visibility solutions or that has begun or completed an implementation.
+The mappings provide information on how cybersecurity functions from the reference design are related to NIST-recommended security outcomes and controls: the security outcome subcategories from the NIST Cybersecurity Framework (Framework for Improving Critical Infrastructure Cybersecurity [CSF] 2.0) and security controls identified in NIST SP 800-53r5 (Security and Privacy Controls for Information Systems and Organizations). All of the elements in these mappings—the TLS 1.3 visibility cybersecurity functions, CSF Subcategories, and SP 800-53 controls—are concepts involving ways to reduce cybersecurity risk.</p>
+<p>Return to <a class="reference internal" href="G_RiskCompliance.html#risk-and-compliance-management"><span class="std std-ref">Risk and Compliance Management</span></a>.</p>
+<section id="g-1-use-cases">
+<span id="g-1"></span><h2>G.1 Use Cases<a class="headerlink" href="#g-1-use-cases" title="Link to this heading">#</a></h2>
+<p>There are two primary use cases for this mapping. They are not intended to be comprehensive.</p>
+<ol class="arabic simple">
+<li><p><strong>Why should organizations implement TLS 1.3 visibility solutions?</strong> This use case identifies how implementing TLS 1.3 visibility solutions can support organizations in achieving CSF Subcategories and SP 800-53 controls. This helps communicate to an organization’s chief information security officer, security team, and senior management that expending resources to implement TLS 1.3 visibility solutions can also aid in fulfilling other security requirements.</p></li>
+<li><p><strong>How can organizations implement TLS 1.3 visibility solutions?</strong> This use case identifies how an organization’s existing implementations of CSF Subcategories and SP 800-53 controls can help support trusted implementation of TLS 1.3 visibility solutions. An organization wanting to implement TLS 1.3 visibility solutions might first assess its current security capabilities so that it can plan how to add missing capabilities and enhance existing capabilities. Organizations can leverage their existing security investments and prioritize future security technology deployment to address the gaps.</p></li>
+</ol>
+</section>
+<section id="g-2-mapping-terminology">
+<span id="g-2"></span><h2>G.2 Mapping Terminology<a class="headerlink" href="#g-2-mapping-terminology" title="Link to this heading">#</a></h2>
+<p>In this publication, we use the following relationship types from NIST IR 8477 to describe how the functions in our reference design are related to the NIST reference documents. Note that the Supports relationship applies only to use case 1 in Section D.1 and the Is Supported By relationship applies only to use case 2.</p>
+<ul class="simple">
+<li><p>Supports: TLS 1.3 Visibility function X supports security control/Subcategory/capability/requirement Y when X can be applied alone or in combination with one or more other functions to achieve Y in whole or in part.</p></li>
+<li><p>Is Supported By: TLS 1.3 Visibility function X is supported by security control/Subcategory/capability/requirement Y when Y can be applied alone or in combination with one or more other security controls/Subcategories/capabilities/requirements to achieve X in whole or in part.</p></li>
+</ul>
+<p>Each Supports and Is Supported By relationship has one of the following properties assigned to it:</p>
+<ul class="simple">
+<li><p>Example of: The supporting concept X is one way (an example) of achieving the supported concept Y in whole or in part. However, Y could also be achieved without applying X.</p></li>
+<li><p>Integral to: The supporting concept X is integral to and a component of the supported concept Y. X must be applied as part of achieving Y.</p></li>
+<li><p>Precedes: The supporting concept X precedes the supported concept Y when X must be achieved before applying Y. In other words, X is a prerequisite for Y.</p></li>
+</ul>
+<p>When determining whether a reference design function’s support for a given CSF Subcategory or SP 800- 53 control is integral to that support versus an example of that support, we do not consider how that function may in general be used to support the Subcategory, control, capability, or requirement. Rather, we consider only how that function is intended to support that Subcategory, control, capability, or requirement within the context of our reference design.</p>
+<p>Also, when determining whether a function is supported by a CSF Subcategory, SP 800-53 control, capability, etc. with the relationship property of precedes, we do not consider whether it is possible to apply the function without first achieving the Subcategory, control, capability, or requirement. Rather, we consider whether, according to our reference design, the Subcategory, control, capability, or requirement. Rather, 434 we consider whether, according to our reference design, the Subcategory, control, capability, or 435 requirement is to be achieved prior to applying that function.</p>
+</section>
+<section id="g-3-cybersecurity-framework-csf-mapping">
+<span id="g-3"></span><h2>G.3 Cybersecurity Framework (CSF) Mapping<a class="headerlink" href="#g-3-cybersecurity-framework-csf-mapping" title="Link to this heading">#</a></h2>
+<p>This section provides a mapping of system architectural elements to the CSF. It includes both CSF objectives that need to be met for secure operation of the platform for visibility into TLS 1.3-protected traffic and CSF objectives that the platform supports.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 30.0%" />
+<col style="width: 30.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Logical Architecture Component</p></th>
+<th class="head"><p>Component’s Function</p></th>
+<th class="head"><p>Function’s Relationship to CSF Subcategories</p></th>
+<th class="head"><p>Relationship Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TLS Client Devices</p></td>
+<td><p>Devices that initiate encrypted traffic. These TLS client devices are likely to be located outside of the data center.</p></td>
+<td><p>Is supported by (example of) PR.DS-02: The confidentiality, integrity, and availability of data-in-transit are protected</p></td>
+<td><p>The TLS client devices use TLS 1.3 to provide cryptographic protection to data-in-transit.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Network Tap</p></td>
+<td><p>Component that provides a copy of traffic from a network segment.</p></td>
+<td><p>Is supported by (precedes) PR.AA-01: Identities and credentials for authorized users, services, and hardware are managed by the organization.</p></td>
+<td><p>Authorization for access to (e.g., configuration of) and connections to a network tap must require credentialling and authorization of the responsible staff.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by PR.AA-02: Identities are proofed and bound to credentials based on the context of interactions.</p></td>
+<td><p>Authorization for access to (e.g., configuration of) and connections to a network tap must require credentialling and authorization of the responsible staff.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) DE.CM-01: Networks and network services are monitored to find potentially adverse events.</p></td>
+<td><p>In the passive inspection architectures, the network tap diverts TLS 1.3-protected traffic for analysis.</p></td>
+</tr>
+<tr class="row-even"><td><p>Middlebox - Break and Inspect Component</p></td>
+<td><p>Component that terminates, decrypts, and re-encrypts/reinitiates traffic.</p></td>
+<td><p>Is supported by (precedes) GV.RR-02: Roles, responsibilities, and authorities related to cybersecurity risk management are established, communicated, understood, and enforced</p></td>
+<td><p>The organization must establish monitoring and analysis roles that are authorized access to the middlebox processes and information associated with inspection and analysis of TLS traffic in order to configure system access controls. The authorized roles must be consistent with internal information protection policies and agreements with external partners.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (precedes) PR.AA-01: Identities and credentials for authorized users, services, and hardware are managed by the organization.</p></td>
+<td><p>Authorization for access to (e.g., configuration of) and connections to middleboxes must require prior credentialling and authorization of the responsible staff.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.AA-06: Physical access to assets is managed, monitored, and enforced commensurate with risk.</p></td>
+<td><p>The middlebox is a security-critical element capable of being used as an unauthorized man-in-the-middle. As such, physical access to this element must be managed and protected to protect against exploitation.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.AA-03: Users, services, and hardware are authenticated</p></td>
+<td><p>The middlebox is capable of being used as an unauthorized man-in-the-middle. As such, authenticated control of access to this element is security critical.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.AA-05: Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties.</p></td>
+<td><p>The middlebox is capable of being used as an unauthorized man-in-the-middle. As such, the principle of least privilege is essential to the integrity of the TLS protections.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (example of) PR.DS-02: The confidentiality, integrity, and availability of data-in-transit are protected</p></td>
+<td><p>The break and inspect middlebox re-encrypts the traffic to provide cryptographic protection to data-in-transit within the data center.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) DE.CM-01: Networks and network services are monitored to find potentially adverse events.</p></td>
+<td><p>The break and inspect middlebox permits continuous network monitoring monitored to detect potential cybersecurity events by decrypting and forwarding traffic re-encrypted by data center keys to real time and post facto analysis platforms.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Real Time Analytics Platform</p></td>
+<td><p>Set of tools for examining unencrypted payloads to identify undesired characteristics such as identification of causes of network or applications performance degradation or failures, key management-based communications failures, detection and identification of anomalous received data, identification of sources of anomalous data, and detection of traffic from unauthorized sources), and identification of legitimate enterprise data being exfiltrated to anomalous destinations.</p></td>
+<td><p>Is supported by (precedes) GV.PO-01: Organizational cybersecurity policy is established, communicated, and enforced. Policy for managing cybersecurity risks is established based on organizational context, cybersecurity strategy, and priorities and is communicated and enforced</p></td>
+<td><p>Organizational security policy is prerequisite to determining authorized vs unauthorized data sources and destinations.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (precedes) PR.AA-01: Identities and credentials for authorized users, services, and hardware are managed by the organization.</p></td>
+<td><p>Authorization for access to the analytics platform(s) must require prior credentialling and authorization of the responsible staff.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.AA-06: Physical access to assets is managed, monitored, and enforced commensurate with risk.</p></td>
+<td><p>The real time analytics platform processes potentially sensitive decrypted TLS traffic.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.IR-01: Networks and environments are protected from unauthorized logical access and usage.</p></td>
+<td><p>The real time analytics platform processes potentially sensitive decrypted TLS traffic.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (example of ) ID.RA-03: Internal and external threats to the organization are identified and recorded.</p></td>
+<td><p>Detection and identification of anomalous received data, identification of sources of anomalous data, and detection of traffic from unauthorized sources contribute to identification of new threats.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (example of) ID.RA-10: Critical suppliers are assessed prior to acquisition.</p></td>
+<td><p>Information discovered in the course of analytics contributes to audit and evaluation of connected business partners for conformance with contractual data security obligations.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.AA-05: Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties.</p></td>
+<td><p>The real time analytics platform accesses a variety of potentially sensitive unencrypted payloads in large quantities. Only personnel having duties specifically authorizing access to the payloads may have access permission.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (example of) ID.AM-03: Representations of the organization’s authorized network communication and internal and external network data flows are maintained.</p></td>
+<td><p>The data provided by the real time analytics platform’s tools are used to maintain and manage the baseline of network operations and expected data flows.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) DE.AM-02: Potentially adverse events are analyzed to better understand associated activities.</p></td>
+<td><p>The real time analytics platform’s tools are used to detect events and analyze attack targets and methods.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) DE.AE-03: Information is correlated from multiple sources.</p></td>
+<td><p>The real time analytics platform’s tools can correlate information from multiple sources to support determination of the impact of anomalous events.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) DE.CM-01: Networks and network services are monitored to find potentially adverse events.</p></td>
+<td><p>The real time analytics platform monitors the network for undesired characteristics such as identification of causes of network or applications performance degradation or failures, key management-based communications failures, detection and identification of anomalous received data, identification of sources of anomalous data, and detection of traffic from unauthorized sources), and identification of legitimate enterprise data being exfiltrated to anomalous destinations.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (example of) DE.CM-6: External service provider activities and services are monitored to find potentially adverse events.</p></td>
+<td><p>The real time analytics platform monitors the network for potential cybersecurity events</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td><p>including unauthorized connections and devices.</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Capture Platform for Post Facto Decryption and Analysis</p></td>
+<td><p>Encrypted storage of captured traffic to allow subsequent analytics of captured traffic. This can be encrypted storage of the captured decrypted traffic or storage of the captured original encrypted traffic.</p></td>
+<td><p>Is supported by (precedes) PR.AA-01: Identities and credentials for authorized users, services, and hardware are managed by the organization.</p></td>
+<td><p>Authorization for access to the traffic capture platform must require prior credentialling and authorization of the responsible staff.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) PR.DS-01: The confidentiality, integrity, and availability of data-at-rest are protected.</p></td>
+<td><p>Traffic is stored only in encrypted form.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (example of) DE.AM-03: Representations of the organization’s authorized network communication and internal and external network data flows are maintained.</p></td>
+<td><p>The data provided by post facto analysis are used to maintain and manage the baseline of network operations and expected data flows.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) DE.AE-02: Potentially adverse events are analyzed to better understand associated activities.</p></td>
+<td><p>The data provided by post facto analysis are used to detect events and analyze attack targets and methods.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) DE.AE-03: Impact of events is determined.</p></td>
+<td><p>Post facto analysis of TLS 1.3-protected traffic correlates information from multiple sources and supports determination of the impact of anomalous events.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (example of) DE.CM-01: Networks and network services are monitored to find potentially adverse events.</p></td>
+<td><p>Post facto analysis of captured, decrypted, and re-encrypted TLS 1.3-protected data permits network monitoring to detect characteristics such as identification of causes of network or applications performance degradation or failures, key management-based communications failures, detection and identification of anomalous received data, identification of sources of anomalous data, and detection of traffic from unauthorized sources), and identification of legitimate enterprise data being exfiltrated to anomalous destinations. Post facto analysis of TLS 1.3-protected traffic can support detection of malicious code and mobile code.</p></td>
+</tr>
+<tr class="row-even"><td><p>Key Governance Platform</p></td>
+<td><p>Security module performing storage and distribution of keys (e.g., discover, create, renew, provision, revoke, and destroy certificates and keys). Bounded lifetime DH keys are pushed to the TLS server and passive decrypt device providing real time decryption, they are also stored for future use by decrypt solutions that work with captured encrypted sessions. Ephemeral session keys and flow identification data are received from the Session Key Capture agent or the decrypt platform providing real time decryption using these keys and stored for future use by decrypt solutions that work with captured encrypted sessions.</p></td>
+<td><p>Is supported by (precedes) PR.AA-01: Identities and credentials for authorized users, services, and hardware are managed by the organization.</p></td>
+<td><p>Authorization for access to (e.g., configuration of) and connections to the key governance platform must require prior credentialling and authorization.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.AA-05: Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties.</p></td>
+<td><p>The key governance platform discovers, creates, renews, provisions, revokes, and destroys certificates and keys upon which transport layer security relies. Unauthorized access to these keys and processes compromises the effectiveness of TLS. Unauthorized access to TLS transactions can result in access to the full range of information being exchanged.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.AA-06: Physical access to assets is managed, monitored, and enforced commensurate with risk.</p></td>
+<td><p>The key governance platform discovers, creates, renews, provisions, revokes, and destroys certificates and keys upon which transport layer security relies.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) PR.DS-01: The confidentiality, integrity, and availability of data-at-rest are protected.</p></td>
+<td><p>Keys are stored only in encrypted form.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) PR.DS-02: The confidentiality, integrity, and availability of data-in-transit are protected.</p></td>
+<td><p>Keys are distributed within the data center in encrypted form only.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (example of) ID.AM-08: Systems, hardware, software, services, and data are managed throughout their life cycles.</p></td>
+<td><p>The key governance platform supports management of keys including revocation and destruction keys according to enterprise policy.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) DE.CM-01: Networks and network services are monitored to find potentially adverse events.</p></td>
+<td><p>The key governance platform permits continuous network monitoring to detect potential cybersecurity events by providing key variable information necessary to enable decrypting and forwarding re-encrypted traffic (by data center keys) to real time and post facto analysis platforms.</p></td>
+</tr>
+<tr class="row-odd"><td><p>TLS Server</p></td>
+<td><p>Counter party for encrypted traffic that generates session keys, negotiates encryption protocols, and connects to key management infrastructure.</p></td>
+<td><p>Is supported by (precedes) GV.OC-02: Internal and external stakeholders are understood, and their needs and expectations regarding cybersecurity risk management are understood and considered.</p></td>
+<td><p>The organization must establish monitoring and analysis roles that are authorized access to the server processes and information associated with inspection and analysis of TLS traffic to configure system access controls. The authorized roles must be consistent with internal information protection policies and agreements with external partners.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (precedes) PR.AA-01: Identities and credentials for authorized users, services, and hardware are managed by the organization.</p></td>
+<td><p>Authorization for access to (e.g., configuration of) TLS servers must require prior credentialling and authorization of appropriate staff.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.AA-05: Access permissions and authorizations are managed, incorporating the principles of least privilege and separation of duties.</p></td>
+<td><p>The TLS server has access to all information being transferred under TLS. Access to the TLS transactions and security processes by unauthorized individuals can result in serious harm to the organization.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.AA-06: Physical access to assets is managed, monitored, and enforced commensurate with risk.</p></td>
+<td><p>The TLS server performs TLS cryptographic processes, including access to keys. It hosts the session key capture and registration agent. Physical access to the server can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.IR-01: Networks and environments are protected from unauthorized logical access and usage.</p></td>
+<td><p>The TLS server performs TLS cryptographic processes, including access to keys. It hosts the session key capture and registration agent. Network-based privileged access to the server can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-even"><td><p>Key Management Agent</p></td>
+<td><p>Provisions the TLS server with bounded lifetime DH keys under control of the key governance platform.</p></td>
+<td><p>Is supported by (precedes) PR.AA-01: Identities and credentials for authorized users, services, and hardware are managed by the organization.</p></td>
+<td><p>Authorization for access to (e.g., configuration of) and connections to the key management agent must require prior credentialling and authorization of the responsible staff.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.AA-05: Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties.</p></td>
+<td><p>The key management agent has access to the session keys under which TLS transactions are protected. Privileged remote access to the key management agent can result in unauthorized access to the keys and information protected under the keys. For this reason, access must be limited to those having specific duties requiring access to all transactions.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.AA-06: Physical access to assets is managed, monitored, and enforced commensurate with risk.</p></td>
+<td><p>The key management agent has access to the session keys under which TLS transactions are protected. Physical access to the key management agent by unauthorized individuals can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.IR-01: Networks and environments are protected from unauthorized logical access and usage.</p></td>
+<td><p>The key management agent has access to the session keys under which TLS transactions are protected. Privileged remote access to the key management agent can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) PR.DS-01: The confidentiality, integrity, and availability of data-at-rest are protected.</p></td>
+<td><p>Keys are stored by the key management agent only in encrypted form.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) PR.DS-2: The confidentiality, integrity, and availability of data-in-transit are protected.</p></td>
+<td><p>Keys are distributed by the key management agent within the data center in encrypted form only.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) DE.CM-01: Networks and network services are monitored to find potentially adverse events.</p></td>
+<td><p>The key management agent permits continuous network monitoring to detect potential cybersecurity events by providing key variable information necessary to enable decrypting and forwarding re-encrypted traffic to real time and post facto analysis platforms.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Key Capture and Registration Agent</p></td>
+<td><p>Captures the ephemeral session keys and registers the captured keys and flow identification data with the key governance platform.</p></td>
+<td><p>Is supported by (precedes) GV.OC-02: Internal and external stakeholders are understood, and their needs and expectations regarding cybersecurity risk management are understood and considered.</p></td>
+<td><p>The organization must establish monitoring and analysis roles that are authorized access to the processes and information associated with inspection and analysis of TLS traffic to configure system access controls. The authorized roles must be consistent with internal information protection policies and agreements with external partners.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.AA-05: Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties.</p></td>
+<td><p>The key capture and registration agent has access to the ephemeral session keys under which TLS transactions are protected. Privileged remote access to the key management agent can result in unauthorized access to the keys and information protected under the keys. For this reason, access must be limited to those having specific duties requiring access to all transactions.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.AA-06: Physical access to assets is managed, monitored, and enforced commensurate with risk.</p></td>
+<td><p>The key capture and registration agent has access to the ephemeral session keys under which TLS transactions are protected. Physical access to the key management agent by unauthorized individuals can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.IR-01: Networks and environments are protected from unauthorized logical access and usage.</p></td>
+<td><p>The key capture and registration agent has access to the ephemeral session keys under which TLS transactions are protected. Privileged remote access to the key management agent can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) PR.DS-01: The confidentiality, integrity, and availability of data-at-rest are protected.</p></td>
+<td><p>Keys are stored by the key capture and registration agent only in encrypted form.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) PR.DS-02: The confidentiality, integrity, and availability of data-in-transit are protected.</p></td>
+<td><p>Keys are distributed by the key capture and registration agent within the data center in encrypted form only.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) DE.CM-01: Networks and network services are monitored to find potentially adverse events.</p></td>
+<td><p>The key capture and registration agent permits continuous network monitoring to detect potential cybersecurity events by providing key variable information necessary to enable decrypting TLS 1.3-encrypted traffic and forwarding re-encrypted traffic to real time and post facto analysis platforms.</p></td>
+</tr>
+<tr class="row-even"><td><p>Key Source</p></td>
+<td><p>Stores private and secret keys.</p></td>
+<td><p>Is supported by (integral to) PR.AA-06: Physical access to assets is managed, monitored, and enforced commensurate with risk.</p></td>
+<td><p>Protection of private and secret cryptographic keys is critical to TLS and to enterprise security and integrity in general. The Thales key source provides physical protection.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) PR.DS-01: The confidentiality, integrity, and availability of data-at-rest are protected.</p></td>
+<td><p>Keys are stored only in encrypted form.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) PR.DS-02: The confidentiality, integrity, and availability of data-in-transit are protected.</p></td>
+<td><p>Keys are distributed by the key source within the data center in encrypted form only.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enterprise PKI</p></td>
+<td><p>Provides enterprise key certificates.</p></td>
+<td><p>Is supported by (integral to) PR.AA-05: Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties.</p></td>
+<td><p>The enterprise PKI has access to private keys. Unrestricted access to the key management agent can result in unauthorized access to the keys and information protected under the keys for the entire enterprise ‘ including other enterprises for which it provides PKI services.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.AA-06: Physical access to assets is managed, monitored, and enforced commensurate with risk.</p></td>
+<td><p>The enterprise PKI has access to private keys, usually for multiple systems. Physical access to the enterprise PKI by unauthorized individuals can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PR.IR-01: Networks and environments are protected from unauthorized logical access and usage.</p></td>
+<td><p>The enterprise PKI has access to private keys, usually for multiple systems. Privileged remote access to the key management agent can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) PR.DS-01: The confidentiality, integrity, and availability of data-at-rest are protected.</p></td>
+<td><p>Provides keying material for protection of decrypted TLS 1.3 traffic sent to storage in post facto analytics platforms within the data center. Keys are stored in the enterprise PKI only in encrypted form.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) PR.DS-02: The confidentiality, integrity, and availability of data-in-transit are protected.</p></td>
+<td><p>Provides keying material for protection of data-in-transit within the data center. Only cryptographically protected private and symmetric keys are distributed by the enterprise PKI.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="g-4-special-publication-sp-800-53-mapping">
+<span id="g-4"></span><h2>G.4 Special Publication (SP) 800-53 Mapping<a class="headerlink" href="#g-4-special-publication-sp-800-53-mapping" title="Link to this heading">#</a></h2>
+<p>While SP 800-53 identifies a broad range of controls that are applicable to the TLS 1.3 visibility platform that is described in this publication, a number of the controls are particularly needed to implement the demonstrated configuration securely. The following table identifies these controls using the “is supported by” designation. The table also identifies SP 800-53 controls that are supported by the demonstrated platform.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 30.0%" />
+<col style="width: 30.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Logical Architecture Component</p></th>
+<th class="head"><p>Component’s Function</p></th>
+<th class="head"><p>Function’s Relationship to SP 800-53 Controls</p></th>
+<th class="head"><p>Relationship Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TLS Client Devices</p></td>
+<td><p>Devices that initiate encrypted traffic. These TLS client devices are likely to be located outside of the data center.</p></td>
+<td><p>Supports (example of) SC-8: Transmission Confidentiality and Integrity</p></td>
+<td><p>The TLS client devices use TLS 1.3 to provide cryptographic protection to data-in-transit.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Network Tap</p></td>
+<td><p>Component that provides a copy of traffic from a network segment.</p></td>
+<td><p>Is supported by (precedes) AC-2: Account Management</p></td>
+<td><p>Accessing tapped network data requires that the organization have defined and documented the types of accounts allowed access to the tapped information; assigned account managers; have identified and applied role-based criteria for individual and group access, continuously monitor use of the account(s); notify account managers and specified staff within an organization-defined time period when accounts are no longer required when users are terminated or transferred, and notify account managers and specified staff within an organization-defined time period when system usage or need-to-know changes for an individual; and authorize access to the system based on: a valid access authorization and Intended system usage.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-4: Access Enforcement</p></td>
+<td><p>Enforcement implements approved authorization policies for logical access to information and system resources in accordance with applicable access control policies.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) IA-2: Identification and Authentication (Organizational Users)</p></td>
+<td><p>Unique identification and authentication of users is applied to all having access to tapped information except for the authorized use of group authenticators without individual authentication. Since processes execute on behalf of groups and roles, organizations may require unique identification of individuals in group accounts or for detailed accountability of individual activity. Note that the use of encrypted virtual private networks for network connections between organization-controlled endpoints and non-organization-controlled endpoints may be treated as internal networks with respect to protecting the confidentiality and integrity of information traversing the network.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) IA-4: Identifier Management</p></td>
+<td><p>Authorization for access to (e.g., configuration of) and connections to a network tap must require receipt of authorization from an organization-defined person or role to assign an individual, group, role, service, or device identifier; selection of an identifier that identifies an individual, group, role, service, or device; and assignment of the identifier to the intended individual, group, role, service, or device.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) CA-7: Continuous Monitoring</p></td>
+<td><p>In the passive inspection architectures, the network tap diverts TLS 1.3-protected traffic to analytic platforms that are used to conduct continuous monitoring.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) SI-4: System Monitoring</p></td>
+<td><p>In the passive inspection architectures, the network tap diverts TLS 1.3-protected traffic to invoke internal monitoring and analysis for attacks and indicators of potential attacks, unauthorized local, network, and remote connections, unauthorized use of the system, and analysis of detected events and anomalies.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Middlebox - Break and Inspect Component</p></td>
+<td><p>Component that terminates, decrypts, and re-encrypts/reinitiates traffic.</p></td>
+<td><p>Is supported by (precedes) AC-2: Account Management</p></td>
+<td><p>The organization must establish monitoring and analysis roles that are authorized access to the middlebox processes and information associated with inspection and analysis of TLS traffic to configure system access controls. The authorized roles must be consistent with internal information protection policies and agreements with external partners.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-4: Access Enforcement</p></td>
+<td><p>Enforcement implements approved authorization policies for logical access to information and system resources in accordance with applicable access control policies.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-6: Least Privilege.</p></td>
+<td><p>The middlebox is capable of being used as an unauthorized man-in-the-middle. As such, the principle of least privilege is essential to the integrity of the TLS protections.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-17: Remote Access</p></td>
+<td><p>The middlebox is capable of being used as an unauthorized man-in-the-middle. As such, control of remote access to this element is security critical. This includes establishing and documenting usage restrictions, configuration/connection requirements, and implementation guidance for each type of remote access allowed and authorizing each type of remote access to the system prior to allowing such connections.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) IA-2: Identification and Authentication (Organizational Users)</p></td>
+<td><p>Unique identification and authentication of users is applied to all having access to break and inspect functionality except for the authorized use of group authenticators without individual authentication. Since processes execute on behalf of groups and roles, organizations may require unique identification of individuals in group accounts or for detailed accountability of individual activity. Note that the use of encrypted virtual private networks for network connections between organization-controlled endpoints and non-organization-controlled endpoints may be treated as internal networks with respect to protecting the confidentiality and integrity of information traversing the network.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) IA-4: Identifier Management</p></td>
+<td><p>Authorization for access to (e.g., configuration of) and connections to and from a break and inspect device must require receipt of authorization from an organization-defined person or role to assign an individual, group, role, service, or device identifier; selection of an identifier that identifies an individual, group, role, service, or device; and assignment of the identifier to the intended individual, group, role, service, or device.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-2: Physical Access Authorization</p></td>
+<td><p>The middlebox is a security-critical element capable of being used as an unauthorized man-in-the-middle. As such, physical access to this element must be limited to individuals who have been specifically authorized access to the device and connections to the device.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-3: Physical Access Control</p></td>
+<td><p>The middlebox is a security-critical element capable of being used as an unauthorized man-in-the-middle. As such, physical access to this element must be controlled and limited to authorized staff.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) CA-7: Continuous Monitoring</p></td>
+<td><p>In the passive inspection architectures, the break and inspect device captures TLS 1.3-protected traffic, decrypts it, re-encrypts it, and routs it to analytic platforms in a form that permits its use in conducting continuous monitoring.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (example of) SC-8: Transmission Confidentiality and Integrity</p></td>
+<td><p>The break and inspect middlebox re-encrypts the traffic to provide cryptographic protection to data-in-transit within the data center.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (example of) SC-12: Cryptographic Key Establishment and Management</p></td>
+<td><p>The break and inspect middlebox obtains keys from the enterprise PKI and routes keys to the key governance platform to support decryption and re-encryption functions necessary to the secure operation of continuous network monitoring and analytics necessary to detect potential cybersecurity events.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) SI-4: System Monitoring</p></td>
+<td><p>In the passive inspection architectures, the network tap diverts TLS 1.3-protected traffic to invoke internal monitoring and analysis for attacks and indicators of potential attacks, unauthorized local, network, and remote connections, unauthorized use of the system, and analysis of detected events and anomalies.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Real Time Analytics Platform</p></td>
+<td><p>Set of tools for examining unencrypted payloads to identify undesired characteristics such as identification of causes of network or applications performance degradation or failures, key management-based communications failures, detection and identification of anomalous received data, identification of sources of anomalous data, and detection of traffic from unauthorized sources), and identification of legitimate enterprise data being exfiltrated to anomalous destinations.</p></td>
+<td><p>Is supported by (precedes) AC-1: Access Control Policy and Procedures</p></td>
+<td><p>Organizational security policy is prerequisite to determining authorized vs unauthorized data sources and destinations.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-4: Access Enforcement</p></td>
+<td><p>Enforcement implements approved authorization policies for logical access to information and system resources in accordance with applicable access control policies.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-6: Least Privilege.</p></td>
+<td><p>The real time analytics platform accesses a variety of potentially sensitive unencrypted payloads in large quantities. Only personnel having duties specifically authorizing access to the payloads may have access permission.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-17: Remote Access</p></td>
+<td><p>The real time analytics platform processes potentially sensitive decrypted TLS traffic. Therefore, remote access to the platform must be controlled.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) IA-2: Identification and Authentication (Organizational Users)</p></td>
+<td><p>Authorization for access to the analytics platform(s) must require prior credentialling and authorization of the responsible staff.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-2: Physical Access Authorization</p></td>
+<td><p>The analytics platform is a has access to decrypted sensitive information. As such, physical access to this element must be limited to individuals who have been specifically authorized access to the device and connections to the device.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-3: Physical Access Control</p></td>
+<td><p>The analytics platform is a has access to decrypted. As such, physical access to this element must be controlled and limited to authorized staff.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (example of) CA-7: Continuous Monitoring</p></td>
+<td><p>The real time analytics platform monitors the network for unauthorized connections and devices. The real time analytics platform also monitors the network for undesired characteristics such as identification of causes of network or applications performance degradation or failures, key management-based communications failures, detection and identification of anomalous received data, identification of sources of anomalous data, and detection of traffic from unauthorized sources), and identification of legitimate enterprise data being exfiltrated to anomalous destinations.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (example of) CM-2: Baseline Configuration</p></td>
+<td><p>The data provided by the real time analytics platform�s tools are used to maintain and manage the baseline of network operations and expected data flows.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (example of) IR-4: Incident Handling</p></td>
+<td><p>The real time analytics platform�s tools support determination of the impact of anomalous events which is essential to incident handling.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (example of) IR-5: Incident Monitoring</p></td>
+<td><p>The analytics platform is an incident monitoring and analytics tool.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (example of) SA-9: External System Services cybersecurity events.</p></td>
+<td><p>The real time analytics platform monitors the network for potential cybersecurity events that might be initiated by external service providers.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) SI-4: System Monitoring</p></td>
+<td><p>The real-time analytics platform is an integral element of system monitoring. It enables discovery of attacks and indicators of potential attacks, unauthorized local, network, and remote connections, unauthorized use of the system, and analysis of detected events and anomalies.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (example of) SR-6: Supplier Assessments and Reviews</p></td>
+<td><p>Information discovered in the course of analytics contributes to audit and evaluation of connected business partners for conformance with contractual data security obligations.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (example of) SR-6: Supplier Assessments and Reviews</p></td>
+<td><p>Information discovered in the course of analytics contributes to audit and evaluation of connected business partners for conformance with contractual data security obligations.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Capture Platform for Post Facto Decryption and Analysis</p></td>
+<td><p>Encrypted storage of captured traffic to allow subsequent analytics of captured traffic. This can be encrypted storage of the captured decrypted traffic or storage of the captured original encrypted traffic.</p></td>
+<td><p>Is supported by (precedes) AC-1: Access Control Policy and Procedures</p></td>
+<td><p>Organizational security policy is prerequisite to determining authorized vs unauthorized data sources and destinations.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-4: Access Enforcement</p></td>
+<td><p>Enforcement implements approved authorization policies for logical access to information and system resources in accordance with applicable access control policies.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-6: Least Privilege.</p></td>
+<td><p>The post facto decryption and analysis platform accesses a variety of potentially sensitive cryptographic keys and decrypted payloads in large quantities. Only personnel having duties specifically authorizing access to the payloads may have access permission.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-17: Remote Access</p></td>
+<td><p>The post facto decryption and analysis platform processes key variables and potentially sensitive decrypted TLS traffic. Therefore, remote access to the platform must be controlled.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) IA-2: Identification and Authentication (Organizational Users)</p></td>
+<td><p>Authorization for access to the post facto decryption and analysis platform must require prior credentialling and authorization of the responsible staff.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-2: Physical Access Authorization</p></td>
+<td><p>The post facto decryption and analysis platform has access to cryptographic keys and decrypted sensitive information. As such, physical access to this element must be limited to individuals who have been specifically authorized access to the device and connections to the device.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-3: Physical Access Control</p></td>
+<td><p>The post facto decryption and analysis platform has access to cryptographic keys and decrypted sensitive information. As such, physical access to this element must be controlled and limited to authorized staff.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (example of) CM-2: Baseline Configuration</p></td>
+<td><p>The data provided by the post facto decryption and analysis platform�s tools are used to maintain and manage the baseline of network operations and expected data flows.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (example of) IR-4: Incident Handling</p></td>
+<td><p>The post facto decryption and analysis platform�s tools support determination of the impact of anomalous events which is essential to incident handling.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (example of) IR-5: Incident Monitoring</p></td>
+<td><p>The post facto decryption and analysis platform is an incident monitoring and analytics tool.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (example of) SA-9: External System Services cybersecurity events.</p></td>
+<td><p>The post facto decryption and analysis platform supports a history of potential network-based cybersecurity events that might be initiated by external service providers.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-12: Cryptographic Key Establishment and Management</p></td>
+<td><p>The platform performs cryptographic key management processes necessary to decryption for post facto analysis.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (example of) SC-18: Mobile Code</p></td>
+<td><p>Post facto analysis of TLS 1.3-protected traffic supports detection of unauthorized mobile code.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-28: Protection of Data-at-Rest</p></td>
+<td><p>Traffic is stored only in encrypted form.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (example of) SC-35: External Malicious Code Identification</p></td>
+<td><p>Post facto analysis of TLS 1.3-protected traffic supports detection of and identification of malicious code from external sources.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) SI-4: System Monitoring</p></td>
+<td><p>Post facto analysis of captured, decrypted, and re-encrypted TLS 1.3-protected data permits analysis of information obtained through network monitoring to detect characteristics such as identification of causes of network or applications performance degradation or failures, key management-based communications failures, detection and identification of anomalous received data, identification of sources of anomalous data, and detection of traffic from unauthorized sources), and identification of legitimate enterprise data being exfiltrated to anomalous destinations.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (example of) SR-6: Supplier Assessments and Reviews</p></td>
+<td><p>Information discovered in the course of analytics contributes to audit and evaluation of connected business partners for conformance with contractual data security obligations.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (example of) SR-6: Supplier Assessments and Reviews</p></td>
+<td><p>Information discovered in the course of analytics contributes to audit and evaluation of connected business partners for conformance with contractual data security obligations.</p></td>
+</tr>
+<tr class="row-even"><td><p>Key Governance Platform</p></td>
+<td><p>Security module performing storage and distribution of keys (e.g., discover, create, renew, provision, revoke, and destroy certificates and keys). Bounded lifetime DH keys are pushed to the TLS server and passive decrypt device providing real time decryption, they are also stored for future use by decrypt solutions that work with captured encrypted sessions. Ephemeral session keys and flow identification data are received from the Session Key Capture agent or the decrypt platform providing real time decryption using these keys and stored for future use by decrypt solutions that work with captured encrypted sessions.</p></td>
+<td><p>Is supported by (precedes) AC-2: Account Management</p></td>
+<td><p>Authorization for access to (e.g., configuration of) and connections to the key governance platform must require prior credentialling and authorization.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-4: Access Enforcement</p></td>
+<td><p>Enforcement implements approved authorization policies for logical access to information and system resources in accordance with applicable access control policies.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-6: Least Privilege.</p></td>
+<td><p>Unauthorized access to TLS transactions can result in access to the full range of information being exchanged.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-17: Remote Access</p></td>
+<td><p>The key governance platform discovers, creates, renews, provisions, revokes, and destroys certificates and keys upon which transport layer security relies. Unauthorized access to these keys and processes compromises the effectiveness of TLS.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-2: Physical Access Authorization</p></td>
+<td><p>The key governance platform discovers, creates, renews, provisions, revokes, and destroys certificates and keys upon which transport layer security relies. As such, the key governance platform has access to cryptographic keys used to decrypt and re-encrypt sensitive information and processes used to protect the confidentiality and integrity of the keys. Physical access to this element must be limited to individuals who have been specifically authorized access to the device and connections to the device.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-3: Physical Access Control</p></td>
+<td><p>The key governance platform discovers, creates, renews, provisions, revokes, and destroys certificates and keys upon which transport layer security relies. As such, the key governance platform has access to cryptographic keys used to decrypt and re-encrypt sensitive information and processes used to protect the confidentiality and integrity of the keys. As such, physical access to this element must be controlled and limited to authorized staff.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) SC-12: Cryptographic Key Establishment and Management</p></td>
+<td><p>Conformance to cryptographic key establishment and management controls is necessary for the correct and secure operation of the key governance platform.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) CA-7: Continuous Monitoring</p></td>
+<td><p>The key governance platform permits continuous network monitoring to detect potential cybersecurity events by providing key variable information necessary to enable decrypting and forwarding re-encrypted traffic (by data center keys) to real time and post facto analysis platforms.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-8: Transmission Confidentiality and Integrity</p></td>
+<td><p>Keys are distributed within the data center in encrypted form only.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-12: Cryptographic Key Establishment and Management</p></td>
+<td><p>The key governance platform discovers, creates, renews, provisions, revokes, and destroys certificates and keys upon which transport layer security relies.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-28: Protection of Data-at-Rest</p></td>
+<td><p>Keys are stored only in encrypted form.</p></td>
+</tr>
+<tr class="row-odd"><td><p>TLS Server</p></td>
+<td><p>Counter party for encrypted traffic that generates session keys, negotiates encryption protocols, and connects to key management infrastructure.</p></td>
+<td><p>Is supported by (precedes) AC-1: Access Control Policy and Procedures</p></td>
+<td><p>The organization must establish monitoring and analysis roles that are authorized access to the server processes and information associated with inspection and analysis of TLS traffic in order to configure system access controls. The authorized roles must be consistent with internal information protection policies and agreements with external partners.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-2: Account Management</p></td>
+<td><p>Authorization for access to (e.g., configuration of) TLS servers must require prior credentialling and authorization of appropriate staff.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-4: Access Enforcement</p></td>
+<td><p>Enforcement implements approved authorization policies for logical access to information and system resources in accordance with applicable access control policies.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-6: Least Privilege.</p></td>
+<td><p>The TLS server has access to all information being transferred under TLS. Only personnel having duties specifically authorizing access to the payloads may have access permission. Access to the TLS transactions and security processes by unauthorized individuals can result in serious harm to the organization.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-17: Remote Access</p></td>
+<td><p>The TLS server performs TLS cryptographic processes, including access to keys. It hosts the session key capture and registration agent. Privileged remote access to the server can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-2: Physical Access Authorization</p></td>
+<td><p>TLS cryptographic processes, including access to keys. It hosts the session key capture and registration agent. Rationale for authorization should stress need-to-know. Physical access to the server can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-3: Physical Access Control</p></td>
+<td><p>TLS cryptographic processes, including access to keys. It hosts the session key capture and registration agent. Control of physical access to the server is essential to avoiding unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-8: Transmission Confidentiality and Integrity</p></td>
+<td><p>TLS server provides TLS 1.3 protection to data-in-transit outside the data center. TLS server also provides cryptographic protection to its connections within the data center.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Key Management Agent</p></td>
+<td><p>Provisions the TLS server with bounded lifetime DH keys under control of the key governance platform.</p></td>
+<td><p>Is supported by (precedes) AC-1: Access Control Policy and Procedures</p></td>
+<td><p>The key management agent has access to the session keys under which TLS transactions are protected. Organizational access control policies and procedures need to support limiting access to the key management agent to only those individuals who are authorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-2: Account Management</p></td>
+<td><p>The key management agent has access to the session keys under which TLS transactions are protected. Authorization for access to The key management agent must require prior credentialling and authorization of appropriate staff.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-4: Access Enforcement</p></td>
+<td><p>Enforcement implements approved authorization policies for logical access to information and system resources in accordance with applicable access control policies.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-6: Least Privilege</p></td>
+<td><p>The key management agent has access to the session keys under which TLS transactions are protected. Privileged remote access to the key management agent can result in unauthorized access to the keys and information protected under the keys. For this reason, access must be limited to those having specific duties requiring access to all transactions.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-17: Remote Access</p></td>
+<td><p>The key management agent has access to the session keys under which TLS transactions are protected. Privileged remote access to the key management agent can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-2: Physical Access Authorization</p></td>
+<td><p>The key management agent has access to the session keys under which TLS transactions are protected. Authorization for physical access must be strictly limited and be informed by need-to-know.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-3: Physical Access Control</p></td>
+<td><p>The key management agent has access to the session keys under which TLS transactions are protected. Physical access to the key management agent by unauthorized individuals can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) CA-7: Continuous Monitoring</p></td>
+<td><p>The key management agent permits continuous network monitoring to detect potential cybersecurity events by providing key variable information necessary to enable decrypting and forwarding re-encrypted traffic to real time and post facto analysis platforms.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-8: Transmission Confidentiality and Integrity</p></td>
+<td><p>Keys are distributed by the key management agent within the data center in encrypted form only.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-12: Cryptographic Key Establishment and Management</p></td>
+<td><p>Keys are distributed by the key management agent within the data center.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-28: Protection of Information as Rest</p></td>
+<td><p>Keys are stored by the key management agent only in encrypted form.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) SI-4: System Monitoring</p></td>
+<td><p>The key management agent permits network monitoring to detect potential cybersecurity events through distribution of key variable information to decryption processes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Key Capture and Registration Agent</p></td>
+<td><p>Captures the ephemeral session keys and registers the captured keys and flow identification data with the key governance platform.</p></td>
+<td><p>Is supported by (precedes) AC-1: Access Control Policy and Procedures</p></td>
+<td><p>The key capture and registration agent has access to the session keys under which TLS transactions are protected. Organizational access control policies and procedures need to support limiting access to the key capture and registration agent to only those individuals who are authorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-2: Account Management</p></td>
+<td><p>The key capture and registration agent has access to the session keys under which TLS transactions are protected. Authorization for access to The key capture and registration agent must require prior credentialling and authorization of appropriate staff.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-4: Access Enforcement</p></td>
+<td><p>Enforcement implements approved authorization policies for logical access to information and system resources in accordance with applicable access control policies.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-6: Least Privilege</p></td>
+<td><p>The key capture and registration agent has access to the ephemeral session keys under which TLS transactions are protected. Privileged remote access to the key management agent can result in unauthorized access to the keys and information protected under the keys. For this reason, access must be limited to those having specific duties requiring access to all transactions.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-17: Remote Access</p></td>
+<td><p>The key capture and registration agent has access to the ephemeral session keys under which TLS transactions are protected. Privileged remote access to the key management agent can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-2: Physical Access Authorization</p></td>
+<td><p>The key capture and registration agent has access to the ephemeral session keys under which TLS transactions are protected. Authorization for physical access to the key management agent must be limited to the set of individuals authorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-3: Physical Access Control</p></td>
+<td><p>The key capture and registration agent has access to the ephemeral session keys under which TLS transactions are protected. Physical access to the key management agent by unauthorized individuals can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) CA-7: Continuous Monitoring</p></td>
+<td><p>The key capture and registration agent permits continuous network monitoring to detect potential cybersecurity events by providing key variable information necessary to enable decrypting TLS 1.3-encrypted traffic and forwarding re-encrypted traffic to real time and post facto analysis platforms.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-8: Transmission Confidentiality and Integrity</p></td>
+<td><p>Keys are distributed by the key capture and registration agent within the data center in encrypted form only.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-12: Cryptographic Key Establishment and Management</p></td>
+<td><p>Keys are distributed to the real-time decryption process and the key governance platform by the key capture and registration agent.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-28: Protection of Information at Rest.</p></td>
+<td><p>Keys are stored by the key capture and registration agent only in encrypted form.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) SI-4: System Monitoring</p></td>
+<td><p>The key capture and registration agent permits network monitoring to detect potential cybersecurity events by providing key variable information necessary to enable decrypting and forwarding re-encrypted traffic to real time and post facto analysis platforms.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Key Source</p></td>
+<td><p>Stores enterprise private and secret keys.</p></td>
+<td><p>Is supported by (integral to) AC-6: Least Privilege.</p></td>
+<td><p>The key source has access to private keys. Unrestricted access to the key source can result in unauthorized access to the keys and information protected under the keys for the entire enterprise.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-17: Remote Access</p></td>
+<td><p>The key source has access to private keys, usually for multiple systems. Privileged remote access to the key source can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-2: Physical Access Authorization</p></td>
+<td><p>The enterprise key source has access to private keys. Physical access to the key source must be authorized to only those trusted individuals exercising appropriate roles and possessing need-to-know.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-3: Physical Access Control</p></td>
+<td><p>The enterprise key source has access to private keys. Physical access to the enterprise key source must be controlled because unauthorized individuals can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-8: Transmission Confidentiality and Integrity</p></td>
+<td><p>Provides keying material for protection of data-in-transit. Only cryptographically protected private and symmetric keys are distributed by the key source.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-12: Cryptographic Key Establishment and Management</p></td>
+<td><p>Provides and protects keying material for protection of data-in-transit within the data center.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-28: Protection of Information at Rest</p></td>
+<td><p>Securely stores keying material for protection of TLS 1.3 traffic within the data center. Keys are physically protected and stored in the key source only in encrypted form.</p></td>
+</tr>
+<tr class="row-even"><td><p>Enterprise PKI</p></td>
+<td><p>Provides enterprise key certificates.</p></td>
+<td><p>Is supported by (precedes) AC-1: Access Control Policy and Procedures</p></td>
+<td><p>The enterprise PKI distributes the enterprise server certificates. Organizational access control policies and procedures need to support limiting access to the key capture and registration agent to only those individuals who are authorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-2: Account Management</p></td>
+<td><p>The enterprise PKI distributes the enterprise server certificates. Authorization for access to The key capture and registration agent must require prior credentialling and authorization of appropriate staff.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-4: Access Enforcement</p></td>
+<td><p>Enforcement implements approved authorization policies for logical access to information and system resources in accordance with applicable access control policies.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-6: Least Privilege.</p></td>
+<td><p>The enterprise PKI has access to private keys. Unrestricted access to the key management agent can result in unauthorized access to the keys and information protected under the keys for the entire enterprise � including other enterprises for which it provides PKI services.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) AC-17: Remote Access</p></td>
+<td><p>The enterprise PKI has access to private keys, usually for multiple systems. Privileged remote access to the key management agent can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-2: Physical Access Authorization</p></td>
+<td><p>The enterprise PKI has access to private keys, usually for multiple systems. Physical access to the enterprise PKI must be authorized to only those trusted individuals exercising appropriate roles and possessing need-to-know.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Is supported by (integral to) PE-3: Physical Access Control</p></td>
+<td><p>The enterprise PKI has access to private keys, usually for multiple systems. Physical access to the enterprise PKI must be controlled because unauthorized individuals can result in unauthorized access to the keys and information protected under the keys.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-8: Transmission Confidentiality and Integrity</p></td>
+<td><p>Provides keying material for protection of data-in-transit within the data center. Only cryptographically protected private and symmetric keys are distributed by the enterprise PKI.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-12: Cryptographic Key Establishment and Management</p></td>
+<td><p>Provides keying material for protection of data-in-transit within the data center.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Supports (integral to) SC-28: Protection of Information at Rest</p></td>
+<td><p>Provides keying material for protection of decrypted TLS 1.3 traffic sent to storage in post facto analytics platforms within the data center. Keys are stored in the enterprise PKI only in encrypted form.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="AppCScenarios/ds-13.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Scenario 4.2: Outdated Software</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Z_ChangeLog.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Change Log</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-1-use-cases">G.1 Use Cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-2-mapping-terminology">G.2 Mapping Terminology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-3-cybersecurity-framework-csf-mapping">G.3 Cybersecurity Framework (CSF) Mapping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-4-special-publication-sp-800-53-mapping">G.4 Special Publication (SP) 800-53 Mapping</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<p>
+  
+    By NIST<br/>
+  
+</p>
+
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+<footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        <div class="disclaimer">
+          <strong>Disclaimer:</strong> Certain commercial equipment, instruments, or
+          materials are identified in this documentation to foster understanding. Such
+          identification does not imply recommendation or endorsement by the National
+          Institute of Standards and Technology, nor does it imply that the materials
+          or equipment identified are necessarily the best available for the purpose.
+        </div>
+      </p>
+    </div>
+</footer>
+  </body>
+</html>
