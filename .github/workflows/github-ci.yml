@@ -1,0 +1,22 @@
+# The Docker image that will be used to build your app
+image: ghcr.io/astral-sh/uv:debian
+# Functions that should be executed before the build script is run
+pages:
+  script:
+    - uv venv
+    - source .venv/bin/activate
+    - uv pip install -r pyproject.toml
+#    - uv pip install -U sphinx
+    - cd source
+#    - apt-get update -y
+#    - apt-get install -y python3-sphinx
+    - make html
+    - cp -r _site/html ../public
+  artifacts:
+    paths:
+      # The folder that contains the files to be exposed at the Page URL
+      - public
+  rules:
+    # This ensures that only pushes to the default branch will trigger
+    # a pages deploy
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
