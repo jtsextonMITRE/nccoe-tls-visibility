@@ -13,8 +13,8 @@ in the Center for Cybersecurity Policy's 2019 workshop
 set of baseline criteria for acceptability of
 solutions for visibility challenges. The NCCoE adopted the criteria
 without change and hosted a virtual workshop focused on TLS 1.3 in
-September 2020 :ref:`[5]<workshop>`. We identified the options below to
-maintain visibility:
+September 2020 :ref:`[5]<workshop>` at which the options below to
+maintain visibility were identified:
 
 - Endpoint mechanisms that establish visibility, such as enhanced
   logging
@@ -75,11 +75,12 @@ proposed solutions provide secure management of servers' cryptographic
 keys, securely manage recorded traffic, and consider privacy via a broad
 set of options, including:
 
-- **Key-management mechanisms** that defer forward secrecy until all
-  copies of keying material needed to maintain current levels of network
-  visibility are deleted (such as copies retained to support passive
-  decryption and inspection, referred to throughout this document as
-  passive inspection).
+- **Key-management mechanisms** that defer forward secrecy until all copies
+  of keying material needed to maintain current levels of network visibility
+  are deleted (such as copies retained to support passive decryption and inspection,
+  referred to throughout this publication as passive inspection).  Passive inspection involves 
+  inspecting encrypted traffic without disrupting the data flow or requiring any 
+  changes to the network or applications using TLS.
 
 - **Network architectures** that provide visibility, such as using
   overlays or incorporating middleboxes (see RFC 3234: Middleboxes:
@@ -87,14 +88,14 @@ set of options, including:
 
 The TLS 1.3 visibility project focuses on passive inspection and
 middlebox solutions to avoid losing TLS 1.3 visibility characteristics
-and vulnerabilities identified in TLS 1.2.
+and to avoid vulnerabilities from continuing to use TLS 1.2.
 
 To achieve visibility through key management (via passive inspection),
 we demonstrate two technical mechanisms for servers whose traffic is of
 interest to the enterprise, as follows:
 
 - The enterprise provisions bounded-lifetime Diffie-Hellman (DH) key
-  pairs for TLS 1.3 servers and are used in ephemeral key exchanges.
+  pairs for TLS 1.3 servers that are used in ephemeral key exchanges.
   This approach includes a purely static deployment that can also use
   key pairs for a short period of time.
 
@@ -105,10 +106,10 @@ interest to the enterprise, as follows:
   Some aspects of analytics functions need enterprise visibility into
   their encrypted traffic. This may require combining network
   architecture and key-management techniques to achieve operational
-  visibility. Therefore, this project demonstrates an architecture that
+  visibility. Therefore, this project demonstrated an architecture that
   achieves visibility inside the data center using tools that break and
   inspect traffic. These middleboxes are commonly used at the enterprise
-  edge to achieve real-time visibility. We also demonstrate how an
+  edge to achieve real-time visibility. We also demonstrated how an
   enterprise can access historical data through key management-based
   solutions.
 

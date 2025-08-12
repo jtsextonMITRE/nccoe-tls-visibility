@@ -52,25 +52,25 @@ protect.
     integrity for the keys.
 
 - **Certificate compromise.** Public keys used during authentication are
-  often exchanged in certificates issued by a certificate authority
-  (CA). A real threat exists if the issuing CA is compromised or if the
-  registration system, persons, or process are used to obtain an
+  often exchanged in certificates issued by CA. A real threat exists
+  if the issuing CA is compromised or if the registration
+  system, persons, or process are used to obtain an
   unauthorized certificate in the name of a legitimate entity to
   compromise the clients.
 
 - **Handshake data replay.** Parties to cryptographically protected
-  communications exchange keys use protocols often called "handshakes,"
+  communications like TLS exchange keys use protocols often called "handshakes,"
   which often include multiple steps. TLS 1.3 allows the client to send
   data (known as 0-RTT data) in the first flight of a handshake with a
   server that previously connected to the client. Replayable 0-RTT data
   presents several security threats to TLS-using applications unless
   those applications are specifically engineered to be safe under replay
-  (minimally, this means idempotent, but could require stronger
+  (minimally, an HTTP method that is idempotent, but could require stronger
   conditions, such as constant-time response). Many applications do not
   allow 0-RTT to avoid the replay concern (e.g.,
   draft-ietf-netconf-over-tls13).
 
-- **Potential attacks include**:
+- **Potential attacks on the security of information that TLS mechanisms protect include**:
 
   - Duplicating actions that cause side effects (e.g., purchasing an
     item or transferring money) to be duplicated, thus harming the site
@@ -111,11 +111,11 @@ Vulnerabilities
 
 Several vulnerabilities were found in both the TLS 1.2 protocol and in
 the implementation of features permitted by TLS 1.2. While TLS 1.2 can
-be made secure using extensions and careful configuration, TLS 1.3's
-design avoids these vulnerabilities. Vendors are taking note and
-focusing on TLS 1.3. Therefore, getting new algorithms or extensions for
-TLS 1.2 for implementation by vendors is increasingly difficult. Below
-are some examples of these challenges:
+be made secure using extensions and careful configuration, the design of 
+TLS 1.3 removes vulnerabilities that exist when using TLS 1.2. Vendors 
+are taking note and focusing on TLS 1.3. Therefore, getting new algorithms
+or extensions for TLS 1.2 for implementation by vendors is increasingly 
+difficult. Below are some examples of the challenges when moving to TLS 1.3:
 
 - Unlike TLS 1.3, TLS 1.2 offers some cipher suites, such as those that
   use RSA key exchange, that do not provide forward secrecy. Where
@@ -142,10 +142,7 @@ are some examples of these challenges:
   public internet, this is a violation of user privacy. The current TLS
   1.3 specification contains a new normative requirement stating that to
   prevent tracking and identification, "Clients SHOULD NOT reuse a
-  ticket for multiple connections." Further, as of this writing, the
-  revised TLS 1.3 draft specification contains an additional normative
-  requirement for the same purpose, "Clients and Servers SHOULD NOT
-  reuse a key share for multiple connections. Reuse of a key share
+  ticket for multiple connections." Reuse of a key share
   allows passive observers to correlate different connections." This
   specification discourages client and server reuse of a key share for
   multiple internet connections. Reusing key shares outside protected
@@ -159,24 +156,26 @@ are some examples of these challenges:
 
 - The TLS 1.2 visibility mechanisms that are based on RSA private key
   sharing allow middleboxes to masquerade as servers. The TLS 1.3
-  mechanisms prevent this because you don't need to share the signature
+  mechanisms prevent this because it is unnecessary to share the signature
   private key to gain visibility.
 
 Risk
 ----
 
-TLS 1.3 significantly reduces risks associated with TLS 1.2. Its
-approach to achieving forward secrecy creates a risk to systems and
-enterprises whose IT security teams need visibility into traffic
-exchanges. From a cryptographic point of view, enterprises implementing
+TLS 1.3 offers improved performance and efficiency and more robust
+security than TLS 1.2. TLS 1.3's more robust security includes 
+mandating forward secrecy resulting in a capability gap for
+enterprises whose IT security teams have been able to meet requirements 
+for visibility into TLS 1.2 network traffic.
+From a cryptographic point of view, enterprises implementing
 TLS 1.3 might effectively mandate reliance on endpoint solutions to
 achieve their operational security requirements. However, this can be
 impractical for many enterprises.
 
 For instance, if an enterprise relied entirely upon endpoint
-security—without any visibility by middleboxes—they would need the items
-listed below. This would require time and resources and could
-potentially impact the migration to TLS 1.3.
+security—without any visibility by middleboxes—steps would 
+need to be taken that require time and resources that could
+potentially impact an enterprise's migration to TLS 1.3.
 
 A frequent first step taken by a sophisticated attacker on a target is
 to modify, disable, or evade endpoint security tools. This is an
@@ -206,9 +205,9 @@ the following steps:
   accurately detect policy drift.
 
 - Implement a credible application allowlist solution to prevent
-  execution/reading of applications and libraries.
+  execution/reading of unauthorized applications and libraries.
 
-- Endpoint control techniques such as enhanced logging can be effective
+- Implement ndpoint control techniques such as enhanced logging as effective
   detective controls where the following conditions are met:
 
   - Secure adequate funding to maintain a robust security information
@@ -237,11 +236,7 @@ this action, organizations should make security controls surrounding
 outbound network communications from organizational endpoints maximally
 restrictive.
 
-The above concepts are beneficial to any organization. Yet, some IT and
-security practitioners outside of highly targeted enterprises view these
-concepts as ''nice to haves' rather than 'must haves.' Experience shows
-that when network visibility is lost, network controls are also
-lost—elevating "nice to haves" to the utmost imperatives.
+The above concepts could be beneficial to an organization but may not be realizable. 
 
 As stated previously, re-architecting networks is difficult, expensive,
 and time-consuming. Even if viable, it is not a practical short-term
@@ -301,7 +296,7 @@ Mappings between cybersecurity functions performed by the reference
 design's logical components and the security characteristics enumerated
 in relevant cybersecurity documents are available in :ref:`AppendixG`.
 
-Any organization can use these mappings to implement or refine TLS 1.3
+Any organization can use security control mappings to implement or refine TLS 1.3
 visibility solutions. The mappings explain how cybersecurity functions
 from the reference design relate to NIST-recommended security outcomes
 and controls. See the security outcome subcategories from the NIST
@@ -316,8 +311,7 @@ mapping methodology is described in NIST IR 8477 *Mapping Relationships
 Between Documentary Standards, Regulations, Frameworks, and Guidelines:
 Developing Cybersecurity and Privacy Concept Mappings* :ref:`[20]<8477>`.
 
-The two primary use cases for this mapping (below) are not intended to
-be comprehensive.
+This mapping helps answer the following questions:
 
 1. **Why should organizations implement TLS 1.3 visibility solutions?**
    This use case identifies how implementing TLS 1.3 visibility

@@ -14,27 +14,26 @@ functional architecture.
 Project Collaborators
 ---------------------
 
-The following organizations have collaborated with the NCCoE to
-demonstrate how to implement TLS 1.3 while maintaining essential
-real-time and post-facto visibility into enterprise network traffic.
-Real-time visibility allows for threat detection during data exchange,
-while post-facto visibility enables analysis after the fact, such as
-forensics analysis, to understand anomalies and respond toor recover from
-security incidents.
+The following organizations have collaborated with the NCCoE to demonstrate
+how to maintain real-time and post-facto visibility into enterprise network 
+traffic when using TLS 1.3. Real-time visibility allows for threat detection 
+during data exchange, while post-facto visibility enables analysis after the 
+fact, such as forensics analysis, to understand anomalies and respond to or 
+recover from security incidents.
 
 AppViewX
 ~~~~~~~~
 
 **AppViewX** is an automated certificate lifecycle management (CLM)
 solution that simplifies public key infrastructure (PKI) and certificate
-management. It combines the best of automation, security, and insights
+management. It combines automation, security, and insights
 to meet all enterprise PKI and key management needs. AppViewX CERT+
 features are purpose-built to address operational and security
 challenges of certificate and key management to help organizations
 prevent application outages and security breaches. AppViewX's
 capabilities include discovering all certificates across complex
 enterprise environments, building and maintaining central inventories,
-provisioning private and public trust certificates from any CA, expiring
+provisioning private and public trust certificates from any certificate authority (CA), expiring
 certificate alerts, and fully automated renewals and revocations.
 
 AppViewX partnered with NETSCOUT to contribute a prototype TLS 1.3 key
@@ -65,7 +64,7 @@ encryption. The company is known for its expertise in identity and
 encryption for web servers and `Internet of
 Things <https://www.digicert.com/internet-of-things.htm>`__ devices.
 DigiCert supports
-`TLS/SSL <https://www.digicert.com/secure-site-ssl/ssl/>`__ and other
+`TLS/ Secure Sockets Layer (SSL) <https://www.digicert.com/secure-site-ssl/ssl/>`__ and other
 digital certificates for PKI deployments at any scale through its
 certificate lifecycle management platform,
 `CertCentral® <https://www.digicert.com/certcentral/>`__. The company
@@ -125,7 +124,7 @@ threats and multi-stage attack prevention. Designed to integrate
 flexibly with existing architectures, the SSL Orchestrator supports
 security stack orchestration—providing flexible deployment options that
 allow enterprises to optimize visibility and defend against evolving
-threats across their network.
+threats across their network. Learn more about F5 at https://www.f5.com/.
 
 JPMorgan Chase & Co.
 ~~~~~~~~~~~~~~~~~~~~
@@ -141,7 +140,8 @@ detection, auditing, and forensics. The analytics processes require
 real-time and post-facto visibility into traffic metadata and contents.
 As such, JPMorgan Chase is providing content, protocol, and performance
 requirements and constraints information that supports the project's
-functional objectives.
+functional objectives. Learn more about JPMorgan Chase at 
+https://www.jpmorganchase.com/. 
 
 Mira Security
 ~~~~~~~~~~~~~
@@ -216,7 +216,8 @@ Detection and Response (NDR) platform integrates with SIEM/SOAR and XDR
 systems, providing a unified interface for efficient security management
 and rapid response. CyberStream sensors deploy in any environment,
 converting packet data into detailed Layer 2-7 metadata for
-comprehensive network visibility and threat detection.
+comprehensive network visibility and threat detection. Learn more about
+NETSCOUT at https://www.netscout.com/.
 
 Not for Radio
 ~~~~~~~~~~~~~
@@ -269,8 +270,8 @@ Counterintelligence and Security Agency (DCSA) for Foreign Ownership,
 Control, or Influence (FOCI) and Committee on Foreign Investments in the
 United States (CFIUS) National Security Agreement.
 
-Thales contributed its hardware security module (HSM), a dedicated
-crypto processor that is specifically designed for the protection of the
+For this project, Thales contributed its hardware security module (HSM), a dedicated
+cryptographic processor that is specifically designed for the protection of the
 crypto key lifecycle. The HSM acts as a trust anchor that protects the
 cryptographic infrastructures by securely managing, processing, and
 storing cryptographic keys inside a hardened, tamper-resistant device.
@@ -283,7 +284,8 @@ strong access controls prevent unauthorized users from accessing
 sensitive cryptographic material. Thales also implements operations that
 make the deployment of secure HSMs as easy as possible. They are
 integrated with the Thales Crypto Command Center for quick and easy
-crypto resource partitioning, reporting, and monitoring.
+crypto resource partitioning, reporting, and monitoring. Learn more about  
+Thales Trusted Cyber Technologies at https://www.thalestct.com/.
 
 .. _architecture-and-builds-1:
 
@@ -321,8 +323,7 @@ maintaining visibility into network traffic encrypted with TLS 1.3
 within enterprise data centers. It focuses on securely managing servers'
 cryptographic keys, recorded traffic, and privacy expectations. Our
 builds demonstrate real-time decryption, analysis, or post facto
-decryption and TLS 1.3 encrypted traffic using one of the following
-techniques:
+decryption and TLS 1.3 encrypted traffic described by one of the following:
 
 - Bounded-lifetime DH keys on the TLS server
 
@@ -330,9 +331,9 @@ techniques:
 
 - Break and inspection of TLS traffic using a middlebox
 
-  - Layer 2 cryptography
+-	Open Systems Interconnection (OSI) Data Link Layer 2 cryptography
 
-  - Layer 3 cryptography
+- OSI Network Layer 3 cryptography
 
 System Architecture Functions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -345,8 +346,8 @@ architecture.
   protocols, and integrate with key management infrastructure.
 
 - **Client Components**: Initiate encrypted traffic for users, devices,
-  and processes, interacting with servers to request certificates and
-  keys. They are typically located outside data centers.
+  and processes that interact with servers to request certificates and
+  keys. They are typically located outside of data centers.
 
 - **Network Tap Function**: Copies network traffic for logging and
   monitoring, aiding in the detection of malicious activity or security
@@ -365,7 +366,7 @@ architecture.
 
 - **Post-Facto Decryption and Analytics**: Decrypts and stores encrypted
   data for later analysis, such as forensic investigations, ensuring
-  secure handling and disposal of data.
+  secure handling, and disposal of data.
 
 - **Key Management Agent**: Provides a secure interface for provisioning
   TLS server keys and implementing policies for key activation and
@@ -396,7 +397,7 @@ passive inspection using rotated bounded-lifetime DH keys on the
 destination TLS server. This approach can be used to capture decrypted
 traffic for real-time analysis, incoming traffic for post-facto or
 historical analysis, or both. Note that the clients internal to the
-enterprise that are recipients of the TLS 1.3-protected traffic from the
+enterprise receiving TLS 1.3-protected traffic from the
 TLS server are not depicted.
 
 .. _dh_arch:
@@ -454,7 +455,7 @@ as follows:
   decryption and are stored for future use by decryption solutions that
   handle captured encrypted sessions.
 
-- **TLS Server:** Peer for encrypted traffic that generates session
+- **TLS Server:** Counterparty for encrypted traffic that generates session
   keys, negotiates encryption protocols, and connects to key management
   infrastructure.
 

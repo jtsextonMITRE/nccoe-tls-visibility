@@ -16,7 +16,7 @@ Planning for Visibility with Post-Quantum Cryptography (PQC)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Post-Quantum Cryptography (PQC) includes digital signature algorithms
-and key encapsulation mechanisms (KEM)The TLS 1.4 visibility solutions
+and key encapsulation mechanisms (KEM). The TLS 1.3 visibility solutions
 don't change key management, signature generation, or signature
 verification processing. Therefore, the future use of PQC signature
 algorithms will not impact the applicability of these visibility
@@ -67,7 +67,7 @@ Client-Based Monitoring
 Client-based monitoring is an additional capability that is not within
 the scope of the current demonstration project. It may be included in
 future project extensions. The project examined server-focused options
-rather than client-focused. Another approach to TLS 1.3 visibility
+rather than client-focused ones. Another approach to TLS 1.3 visibility
 involves reliance on enterprise support directly by the client endpoint
 or using clients via trusted proxy methods (e.g., SOCKS proxies). This
 approach is reported to require no potential deviation from RFC 8446.

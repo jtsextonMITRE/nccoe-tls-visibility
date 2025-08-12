@@ -132,7 +132,8 @@ following elements:
 Monitoring for Compliance and Hygiene Scenario
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Enterprises that conduct proactive traffic assessments can compare the
+Enterprises that conduct proactive traffic assessments can use 
+these traffic assessments as a baseline for comparison of the
 attributes of the traffic being monitored against their forward-looking
 expectations for cybersecurity. The compliance and hygiene scenario
 shows how to verify that the observed traffic profile complies with
