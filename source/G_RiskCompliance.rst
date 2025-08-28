@@ -16,8 +16,10 @@ resulting from the operation of an information system. Part of risk
 management incorporates threat and vulnerability analyses and considers
 mitigations provided by security controls planned or in place."
 
-The NCCoE recommends that any discussion of risk management—particularly
-at the enterprise level— should begin by reviewing `NIST SP 800-37
+The NCCoE recommends that any discussion of risk management — particularly 
+for an organization with a defined mission/goal and a defined boundary,
+using systems to execute that mission, and with responsibility for 
+managing its own risks and performance — should begin by reviewing `NIST SP 800-37
 Revision 2, Risk Management Framework for Information Systems and
 Organizations <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-37r2.pdf>`__  —material
 that is publicly available. The `Risk Management Framework
@@ -101,7 +103,7 @@ protect.
   endpoint solutions may provide good security up to the point where the
   system running the endpoint or endpoint software is compromised. An
   endpoint solution may not detect an endpoint compromise if it relies
-  on trusting what the endpoint software tells it—resulting in false
+  on trusting what the endpoint software tells it, resulting in false
   trust in the endpoint. Alternate solutions that analyze network
   traffic can detect compromised or rogue endpoints and are resilient
   when used alongside endpoint solutions.
@@ -236,7 +238,7 @@ this action, organizations should make security controls surrounding
 outbound network communications from organizational endpoints maximally
 restrictive.
 
-The above concepts could be beneficial to an organization but may not be realizable. 
+The above concepts could be beneficial to an organization, but may not be realizable. 
 
 As stated previously, re-architecting networks is difficult, expensive,
 and time-consuming. Even if viable, it is not a practical short-term
@@ -285,9 +287,10 @@ of loss of visibility into information exchanges by the IT security
 staff responsible for security monitoring and forensics. One of the
 visibility approaches demonstrated in this project involves middlebox
 solutions. The risks associated with introducing in-house middleboxes
-having man-in-the-middle capabilities and/or caching or otherwise
-storing session keys may be weighed against the consequences of losing
-security monitoring and forensics capabilities.
+that may have vulnerabilities enabling network attacks, where an attacker
+intercepts communications and/or caching or otherwise storing session keys
+may be weighed against the consequences of losing security monitoring and
+forensics capabilities.
 
 Security Control Map
 --------------------

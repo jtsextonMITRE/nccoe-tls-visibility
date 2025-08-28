@@ -25,7 +25,7 @@ traffic and stored data. The approach used in TLS 1.3 to achieve forward
 secrecy conflicts with the passive decryption techniques that are widely used by
 enterprises to gain visibility into their internal enterprise
 TLS-protected traffic. The use of forward secrecy conflicts with the passive
-decryption techniques used today for visibility resulting results in 
+decryption techniques used today for visibility, resulting in 
 enterprises choosing between using the TLS 1.2 protocol without forward 
 secrecy or adopting TLS 1.3 together with some alternative method for 
 achieving visibility into internal traffic. If an enterprise opts for TLS 1.2, 
@@ -106,7 +106,7 @@ following ways:
 
 - Depending on endpoints for management and logging\ **:** Even if the
   available endpoint solutions selected are stable, capable, and
-  effective and are consistent and reliable recorders of all events
+  effective, and are consistent and reliable recorders of all events
   related to incidents (enhanced logging), this would require building a
   completely separate infrastructure capable of collecting, storing, and
   parsing terabytes (or more) of data. None of this is a simple

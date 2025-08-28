@@ -28,7 +28,7 @@ Finally, two reference builds achieve visibility through the breaking
 and inspection of TLS traffic using a middlebox. One middlebox builds
 and operates on traffic at the OSI Layer 3 level, and the other operates
 on the OSI Layer 2. There are two TLS sessions: the first between the
-TLS client and the middlebox and the second between the middlebox and
+TLS client and the middlebox, and the second between the middlebox and
 the TLS server. The decrypted traffic is copied between the two
 connections. To support post-facto decryption, the TLS session keys of
 one or both TLS sessions are registered with the key governance platform
@@ -36,7 +36,7 @@ one or both TLS sessions are registered with the key governance platform
 Each architecture contains a subset of 12 components, including TLS 1.3
 servers, TLS 1.3 clients, network tap(s), break and inspect
 middlebox(es), real-time TLS traffic decryption, real-time TLS traffic
-analysis, post facto traffic decryption and analysis, key management
+analysis, post-facto traffic decryption and analysis, key management
 agents, key capture and registration agents, enterprise PKI, key
 governance, and key sources. The architecture's daemons generate or capture
 sensitive key material, and each one ensures that:
@@ -69,7 +69,7 @@ the normal TLS handshake. Due to differences in definitions of
 "ephemeral," the bounded-lifetime DH key pairs are considered ephemeral
 keys in RFC 8446 and static keys in SP 800-56A. The key governance
 platform provisions the server with new bounded-lifetime DH key pairs on
-a frequent basis via the agent. A decrypt platform that has the
+a frequent basis via the agent. A decryption platform that has the
 bounded-lifetime DH key pairs used by the TLS server to establish TLS
 sessions can decrypt all TLS sessions to the server for the period
 during which the server uses those DH key pairs. The figure below depicts the
@@ -213,7 +213,7 @@ the lab build for this reference architecture are in the table below.
    |                      |              |     (OCI)                     |
    |                      |              |   | Version 6.3.5 build 3184  |
    +----------------------+--------------+-------------------------------+
-   | Post Facto Analytics |              | - vSTREAM ISNG Version 6.3.5  |
+   | Post-Facto Analytics |              | - vSTREAM ISNG Version 6.3.5  |
    | Platform             |              |   build 3184                  |
    |                      |              |                               |
    |                      |              | - vCYBERSTREAM ISNG Version   |
@@ -242,7 +242,7 @@ In the case of capture of encrypted flows for post-facto or historical
 analysis, these agents register the captured keys with the key
 governance platform. These keys can be retrieved from the key governance
 platform using the TLS session's client-random-id as the flow
-identification mechanism. This decrypt mechanism works regardless of the
+identification mechanism. This decryption mechanism works regardless of the
 TLS version and cipher suite negotiated between the client and server.
 The figure below depicts the elements involved in demonstrating inspection
 using exported session keys. Both post-facto and real-time decryption
@@ -379,7 +379,7 @@ Exported Session Keys Reference Architecture
    |                      |              |     (OCI)                     |
    |                      |              |   | Version 6.3.5 build 3184  |
    +----------------------+--------------+-------------------------------+
-   | Post Facto Analytics |              | - vSTREAM ISNG Version 6.3.5  |
+   | Post-Facto Analytics |              | - vSTREAM ISNG Version 6.3.5  |
    | Platform             |              |   build 3184                  |
    |                      |              |                               |
    |                      |              | - vCYBERSTREAM ISNG Version   |
@@ -393,8 +393,8 @@ Exported Session Keys Reference Architecture
 Installation and Configuration for Exported Session Key Approach
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Instructions for installation and configuration of an exported session
-key builds can be found in :ref:`E.3`.
+Instructions for the installation and configuration of an exported session
+key build can be found in :ref:`E.3`.
 
 Break and Inspect Using Middleboxes
 -----------------------------------
@@ -417,7 +417,7 @@ server. The middlebox copies the decrypted TLS payload from the first
 TLS connection to the second TLS connection while passing the clear text
 of the traffic to the Real-time Analytics Platform. Finally, the
 middlebox registers the ephemeral session key for each secondary
-connection with the Key Governance Platform. The post facto analytics
+connection with the Key Governance Platform. The post-facto analytics
 platform can retrieve the ephemeral keys by querying the Key Governance
 Platform using the client's random identifier for the TLS session to be
 decrypted. The descriptive detail for active inspection using
@@ -425,7 +425,7 @@ middleboxes is provided in :ref:`E.4`.
 
 The figure below depicts the architectural elements involved in demonstrating
 visibility using a middlebox. **Note**: Although real-time and
-post-facto decryption is shown in the architecture drawing, only
+post-facto decryption are shown in the architecture drawing, only
 real-time decryption has been demonstrated as of this writing. Traffic
 is re-encrypted for transmission to the post-facto traffic capture
 platform within the data center.
@@ -449,7 +449,7 @@ The real-time break and inspect process executes the following steps:
 1. TLS Server certificates are provisioned on the appropriate TLS
    Server.
 
-2. All TLS Server certificates, and private keys are loaded into the
+2. All TLS Server certificates and private keys are loaded into the
    middlebox.
 
 3. The TLS client negotiates a TLS session with the middlebox.
@@ -483,7 +483,7 @@ real-time decryption sequence shown above:
 8.  The Network Tap captures encrypted packets between the middlebox and
     server and forwards them to the Post-Facto Analytics Platform.
 
-9.  The Analytics Platform selects the traffic stream to be decrypted.
+9.  The Post-Facto Analytics Platform selects the traffic stream to be decrypted.
 
 10. Per the traffic stream, the Analytics Platform requests the session
     key from the Key Governance Platform, and the Key Governance
@@ -555,7 +555,7 @@ Decryption Reference Architecture (Layer 3 Implementation)
    |                      |              |     (OCI)                     |
    |                      |              |   | Version 6.3.5 build 3184  |
    +----------------------+--------------+-------------------------------+
-   | Post Facto Analytics |              | - vSTREAM ISNG Version 6.3.5  |
+   | Post-Facto Analytics |              | - vSTREAM ISNG Version 6.3.5  |
    | Platform             |              |   build 3184                  |
    |                      |              |                               |
    |                      |              | - vCYBERSTREAM ISNG Version   |
@@ -630,7 +630,7 @@ Decryption Reference Architecture (Layer 2 Implementation)
    |                      |              |     (OCI)                     |
    |                      |              |   | Version 6.3.5 build 3184  |
    +----------------------+--------------+-------------------------------+
-   | Post Facto Analytics |              | - vSTREAM ISNG Version 6.3.5  |
+   | Post-Facto Analytics |              | - vSTREAM ISNG Version 6.3.5  |
    | Platform             |              |   build 3184                  |
    |                      |              |                               |
    |                      |              | - vCYBERSTREAM ISNG Version   |
@@ -660,7 +660,7 @@ Installation and Configuration for Active Middlebox Approach
 Installation and Configuration for Layer 3 Build
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Instructions for the installation and configuration of the Layer 3 active
+The instructions for the installation and configuration of the Layer 3 active
 middlebox build can be found at :ref:`E.4.4`.
 
 Installation and Configuration for Layer 2 Build 

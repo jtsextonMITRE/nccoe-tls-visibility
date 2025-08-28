@@ -13,8 +13,8 @@ in the Center for Cybersecurity Policy's 2019 workshop
 set of baseline criteria for acceptability of
 solutions for visibility challenges. The NCCoE adopted the criteria
 without change and hosted a virtual workshop focused on TLS 1.3 in
-September 2020 :ref:`[5]<workshop>` at which the options below to
-maintain visibility were identified:
+September 2020 :ref:`[5]<workshop>`, where participants identified the
+following options for maintaining visibility: 
 
 - Endpoint mechanisms that establish visibility, such as enhanced
   logging

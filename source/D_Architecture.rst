@@ -93,7 +93,7 @@ security <https://en.wikipedia.org/wiki/Application_security>`__,
 multi-cloud management, online fraud prevention, application delivery
 networking, application availability & performance, network security,
 and access & authorization. F5 is headquartered in Seattle, Washington,
-with an additional 75 offices in 43 countries focusing on account
+with an additional 75 offices in 43 countries, focusing on account
 management, global services support, product development, manufacturing,
 and software engineering. F5 offers application delivery controller
 technology, application layer automation, multi-cloud, and security
@@ -149,12 +149,12 @@ Mira Security
 **Mira Security** delivers standalone TLS visibility solutions, allowing
 existing, unmodified enterprise security tools to detect and block
 threats hidden inside encrypted traffic flows. Mira Security's
-technology is embedded in solutions from many companies as well as being
+technology is embedded in solutions from many companies, as well as being
 available directly from Mira. Their Encrypted Traffic Orchestrator (ETO)
 software supports all the latest TLS standards—providing visibility into
 encrypted traffic without weakening the security profile of the
 connection. ETO software can be deployed as a physical or virtual
-appliance or in public cloud environments and delivers consistent
+appliance or in public cloud environments, delivering consistent
 features and functionality across deployments.
 
 The ETO offers a transparent TLS visibility solution that decrypts
@@ -245,11 +245,11 @@ controlled, bounded-lifetime Diffie-Hellman key material in TLS 1.3
 sessions. Importantly, the Agent's operation does not introduce new
 pathways for the lateral movement of malware by requiring the relaxation
 of any platform security mechanisms. Other modes of operation of the
-EVA, such as high performance and fully deterministic reporting of
+EVA, such as high-performance and fully deterministic reporting of
 per-session key material, as well as distributed bounded-lifetime key
 generation, are not used in this demonstration. Additional components of
-the Encryption Visibility Architecture\ :sup:`TM` family designed to
-address scalability and integration challenges within larger deployments
+the Encryption Visibility Architecture\ :sup:`TM` family, designed to
+address scalability and integration challenges within larger deployments,
 are likewise not used.
 
 Thales Trusted Cyber Technologies
@@ -312,7 +312,7 @@ visibility. These functions may include:
 This project aims to develop and test an architecture that provides
 visibility within an enterprise data center. This is achieved using
 tools that intercept and decrypt traffic without altering the traffic
-flow between the TLS clients and servers, all without changing the TLS
+flow between the TLS clients and servers, without changing the TLS
 1.3 protocol. In this demonstration project, we examine TLS 1.3
 deployment *within* the enterprise data center and address mechanisms
 that can support access to historical data by leveraging key
@@ -322,7 +322,7 @@ This NIST Cybersecurity Practice Guide addresses the challenge of
 maintaining visibility into network traffic encrypted with TLS 1.3
 within enterprise data centers. It focuses on securely managing servers'
 cryptographic keys, recorded traffic, and privacy expectations. Our
-builds demonstrate real-time decryption, analysis, or post facto
+builds demonstrate real-time decryption, analysis, or post-facto
 decryption and TLS 1.3 encrypted traffic described by one of the following:
 
 - Bounded-lifetime DH keys on the TLS server
@@ -366,7 +366,7 @@ architecture.
 
 - **Post-Facto Decryption and Analytics**: Decrypts and stores encrypted
   data for later analysis, such as forensic investigations, ensuring
-  secure handling, and disposal of data.
+  secure handling and disposal of data.
 
 - **Key Management Agent**: Provides a secure interface for provisioning
   TLS server keys and implementing policies for key activation and
@@ -433,7 +433,7 @@ as follows:
 - **Network Tap:** Component that provides a copy of traffic from a
   network segment.
 
-- **Real-Time Decryption:** Passive decrypt component that decrypts and
+- **Real-Time Decryption:** Passive decryption component that decrypts and
   forwards the copied traffic.
 
 - **Real-Time Analytics Platform:** Set of tools for examining decrypted
@@ -447,11 +447,11 @@ as follows:
 - **Key Governance Platform:** Security module performing storage and
   distribution of keys (e.g., discover, create, renew, provision,
   revoke, and destroy certificates and keys). Bounded-lifetime DH keys
-  are pushed to the TLS server and passive decrypt device to provide
-  real-time decryption. They are also stored for future use by decrypt
+  are pushed to the TLS server and passive decryption device to provide
+  real-time decryption. They are also stored for future use by decryption
   solutions that work with captured encrypted sessions. Exported session
   keys and flow identification data are obtained from the Session Key
-  Capture agent or the decrypt platform. These keys enable real-time
+  Capture agent or the decryption platform. These keys enable real-time
   decryption and are stored for future use by decryption solutions that
   handle captured encrypted sessions.
 
@@ -518,7 +518,7 @@ Below are descriptions of the B&I middlebox components:
 - **Key Governance Platform:** Security module performing storage and
   distribution of ephemeral session keys and associated flow
   identification data provided by the B&I device for later use by a
-  passive decrypt device working on captured encrypted traffic.
+  passive decryption device working on captured encrypted traffic.
 
 - **TLS Server:** Counterparty for encrypted traffic that generates
   session keys, negotiates encryption protocols, and connects to the
