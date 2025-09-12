@@ -1,7 +1,0 @@
-.. _References:
-
-References
-######################
-
-
-

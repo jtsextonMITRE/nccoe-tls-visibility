@@ -1,6 +1,0 @@
-.. _ExecutiveSummary:
-
-Executive Summary
-#################
-
-
