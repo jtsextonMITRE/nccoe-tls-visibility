@@ -4,7 +4,7 @@ This repository contains technical documentation supporting the ["Addressing Vis
 
 Contact information
 
-- PI: Murugiah Souppaya, ITL, CSD, murugiah.souppaya@nist.gov
+- PI: Bill Newhouse, ITL, ACD, newhouse@nist.gov
 - Task Lead: John Kent, ITL, ACD, john.kent@nist.gov
 - Repository Maintainer: Joshua Klosterman, ITL, ACD, joshua.klosterman@nist.gov
 
