@@ -43,10 +43,6 @@ The primary appliance was provisioned with the following modules from the ``Syst
 F5 BIG-IP Syslog Server Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------+------------+------------------------+----------------------------------------------------------------------+
-| Interface | Network    | IP Address             | Purpose                                                              |
-+===========+============+========================+======================================================================+
-
 This VM, running Ubuntu 20.04.6 LTS was created with a resource allocation including 8 vCPUs, 16 GB of memory, and 75 GB of storage.
 
 .. include:: AppendixBGeneration/f5syslog.rst
@@ -175,19 +171,19 @@ This section describes the configuration of the F5 BIG-IP device for interceptin
 Additional Configuration Files
 ------------------------------
 
-+-----------------------------------------------------------------+
-| Relevant Configuration Files                                    |
-+=================================================================+
-| big-ip/irules/nccoeKeyExportToRedisClientSide_iRule.txt         |
-+-----------------------------------------------------------------+
-| big-ip/irules/nccoeKeyExportToRedisServerSide_iRule.txt         |
-+-----------------------------------------------------------------+
-| big-ip/irules/ssloS_NETSCOUT-port_remap.txt                     |
-+-----------------------------------------------------------------+
-| big-ip/irules/sslo_BreakInspect-gw_in_t.txt                     |
-+-----------------------------------------------------------------+
-| big-ip/irules/sslo_BreakInspect-lib.txt                         |
-+-----------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Relevant Configuration Files                                                                                                                                                                                    |
++=================================================================================================================================================================================================================+
+| `big-ip/irules/nccoeKeyExportToRedisClientSide_iRule.txt <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/f5-active-decryptor/big-ip/irules/nccoeKeyExportToRedisClientSide_iRule.txt>`__ |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `big-ip/irules/nccoeKeyExportToRedisServerSide_iRule.txt <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/f5-active-decryptor/big-ip/irules/nccoeKeyExportToRedisServerSide_iRule.txt>`__ |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `big-ip/irules/ssloS_NETSCOUT-port_remap.txt <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/f5-active-decryptor/big-ip/irules/ssloS_NETSCOUT-port_remap.txt>`__                         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `big-ip/irules/sslo_BreakInspect-gw_in_t.txt <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/f5-active-decryptor/big-ip/irules/sslo_BreakInspect-gw_in_t.txt>`__                         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `big-ip/irules/sslo_BreakInspect-lib.txt <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/f5-active-decryptor/big-ip/irules/sslo_BreakInspect-lib.txt>`__                                 |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 A number of iRules were defined for this build within F5. 
 
