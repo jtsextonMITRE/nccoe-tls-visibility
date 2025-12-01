@@ -1,5 +1,5 @@
 F5-Syslog Server Configuration
------------------------------
+------------------------------
 
 The F5-Syslog server build started with a standard Ubuntu 20.04.6 LTS virtual machine created with allocations of 2 vCPUs, 16 GB of memory, 50 GB of storage, and 2 network interface cards. 
 
